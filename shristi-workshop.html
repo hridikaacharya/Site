@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inclusive Menstrual Health Workshop — Pragya Nepal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green-deep:  #145A5A;
+      --green-mid:   #3A8A5C;
+      --green-light: #7FC5C5;
+      --green-tint:  #E6F5F5;
+      --cream:       #F4FAFA;
+      --ink:         #102A2A;
+      --ink-soft:    #466666;
+      --white:       #ffffff;
+      --radius:      12px;
+      --shadow:      0 4px 24px rgba(44,110,73,0.10);
+    }
+
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); line-height: 1.7; }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white);
+      border-bottom: 1.5px solid var(--green-light);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5vw; height: 70px;
+    }
+
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+
+    .logo-img {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  border-radius: 50%; /* remove this line if your logo isn't meant to be circular */
+}
+
+    .logo-circle svg { width: 28px; height: 28px; }
+
+    .nav-wordmark {
+      font-family: 'Cormorant Garant', serif;
+      font-size: 1.35rem; font-weight: 700;
+      color: var(--green-deep);
+    }
+
+    .nav-back {
+      font-size: 0.88rem; font-weight: 500;
+      color: var(--ink-soft); text-decoration: none;
+      display: flex; align-items: center; gap: 6px;
+      transition: color 0.2s;
+    }
+
+    .nav-back:hover { color: var(--green-deep); }
+
+    .hero {
+      background: linear-gradient(135deg, var(--green-deep) 0%, var(--green-mid) 100%);
+      color: var(--white);
+      text-align: center;
+      padding: 80px 5vw 70px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #particle-canvas {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--green-light); margin-bottom: 0.75rem;
+      position: relative; z-index: 10;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garant', serif;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 700; line-height: 1.15;
+      margin-bottom: 0.75rem;
+      position: relative; z-index: 10;
+    }
+
+    .hero-meta {
+      font-size: 0.92rem; opacity: 0.8;
+      position: relative; z-index: 10;
+    }
+
+    .wave-divider { display: block; width: 100%; overflow: hidden; line-height: 0; margin-top: -1px; }
+    .wave-divider svg { display: block; width: 100%; }
+
+    .content { max-width: 820px; margin: 0 auto; padding: 60px 5vw; }
+
+    .section-label {
+      font-size: 0.73rem; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--green-deep); margin-bottom: 0.4rem;
+    }
+
+    .content h2 {
+      font-family: 'Cormorant Garant', serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700; color: var(--ink);
+      margin-bottom: 1rem; line-height: 1.25;
+    }
+
+    .content p { color: var(--ink-soft); margin-bottom: 1rem; font-size: 0.97rem; }
+
+    .highlight-box {
+      background: var(--green-tint);
+      border-left: 4px solid var(--green-deep);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .highlight-box p { margin: 0; color: var(--ink); font-weight: 500; }
+
+    .team-strip {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 1.4rem 1.8rem;
+      box-shadow: var(--shadow);
+      margin: 2rem 0;
+    }
+
+    .team-strip h4 {
+      font-family: 'Cormorant Garant', serif;
+      font-size: 1.1rem; font-weight: 700;
+      color: var(--green-deep); margin-bottom: 0.5rem;
+    }
+
+    .team-strip p { margin: 0; font-size: 0.9rem; color: var(--ink-soft); }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 2.5rem 0;
+    }
+
+    .photo-item {
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .photo-placeholder {
+      width: 100%; aspect-ratio: 4/3;
+      background: linear-gradient(135deg, var(--green-light), var(--green-tint));
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 8px; color: var(--green-deep);
+    }
+
+    .photo-placeholder svg { opacity: 0.35; }
+    .photo-placeholder span { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.45; }
+
+    .photo-caption { padding: 0.7rem 1rem; font-size: 0.8rem; color: var(--ink-soft); }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 2rem 0;
+    }
+
+    .stat-box {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 1.4rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .stat-box strong {
+      display: block;
+      font-family: 'Cormorant Garant', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--green-deep);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+
+    .stat-box span { font-size: 0.82rem; color: var(--ink-soft); }
+
+    .back-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--green-deep); color: var(--white);
+      padding: 0.65rem 1.6rem; border-radius: 50px;
+      font-size: 0.88rem; font-weight: 600;
+      text-decoration: none; transition: background 0.2s, transform 0.2s;
+      margin-top: 1rem;
+    }
+
+    .back-btn:hover { background: var(--green-mid); transform: translateY(-2px); }
+
+    footer {
+      background: var(--green-deep); color: rgba(255,255,255,0.7);
+      text-align: center; padding: 2rem 5vw;
+      font-size: 0.82rem;
+    }
+
+    footer a { color: var(--green-light); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      .photo-grid, .stat-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+ <a href="D://Pragya Nepal/site draft 1.html" class="nav-logo">
+  <img src="logo.jpg" alt="Pragya Nepal Logo" class="logo-img" />
+  <span class="nav-wordmark">Pragya Nepal</span>
+</a>
+  <a href="D://Pragya Nepal/site draft 1.html" class="nav-back">← Back to Projects</a>
+</nav>
+
+<section class="hero">
+  <canvas id="particle-canvas"></canvas>
+  <p class="hero-eyebrow">Shristi English School, Golfutar · June 2024</p>
+  <h1>Inclusive Menstrual<br/>Health Workshop</h1>
+  <p class="hero-meta">Stigma Breakdown · Allyship · 150+ Students Reached</p>
+</section>
+
+<span class="wave-divider">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,0 C360,60 1080,60 1440,0 L1440,60 L0,60 Z" fill="#F7F4EE"/>
+  </svg>
+</span>
+
+<div class="content">
+
+  <p class="section-label">Overview</p>
+  <h2>Real Social Change Cannot Happen in a Silo</h2>
+  <p>At Shristi English School, we intentionally brought 150+ male and female students into the same room to talk openly about menstrual health and hygiene — because true change requires everyone.</p>
+  <p>The workshop focused on breaking the taboos and isolation practices that often surround menstruation in Nepal. By educating male students on the actual science of the menstrual cycle, we taught them how to support and care for their female classmates and family members.</p>
+
+  <div class="stat-row">
+    <div class="stat-box">
+      <strong>150+</strong>
+      <span>Students reached across both genders</span>
+    </div>
+    <div class="stat-box">
+      <strong>1</strong>
+      <span>Shared room — intentionally mixed audience</span>
+    </div>
+  </div>
+
+  <div class="photo-grid">
+    <div class="photo-item">
+      <div class="photo-placeholder">
+        <!-- Replace with:  -->
+        <img src="20.png" alt="Workshop session" style="width:100%;aspect-ratio:4/3;object-fit:cover;" />
+        <span> </span>
+      </div>
+      <div class="photo-caption"></div>
+    </div>
+    <div class="photo-item">
+      <div class="photo-placeholder">
+        <!-- Replace with:  -->
+        <img src="6.png" alt="Discussion" style="width:100%;aspect-ratio:4/3;object-fit:cover;" />
+        <span> </span>
+      </div>
+      <div class="photo-caption"></div>
+    </div>
+  </div>
+
+  <p class="section-label">Impact</p>
+  <h2>Replacing Awkwardness With Empathy</h2>
+  <p>By the end of the workshop, male students demonstrated a clear understanding of the menstrual cycle — not as something to be embarrassed about, but as something they could actively support their peers through.</p>
+  <p>We saw the dynamic in the room shift visibly as the session progressed. Students who arrived hesitant left with questions, conversations, and a new vocabulary for talking about health.</p>
+
+  <div class="photo-grid">
+    <div class="photo-item">
+      <div class="photo-placeholder">
+        <!-- Replace with: <img src="8.png" alt="Student engagement" style="width:100%;aspect-ratio:4/3;object-fit:cover;" /> -->
+        <img src="4.png" alt="Student engagement" style="width:100%;aspect-ratio:4/3;object-fit:cover;" />
+        <span></span>
+      </div>
+      <div class="photo-caption"></div>
+    </div>
+    <div class="photo-item">
+      <div class="photo-placeholder">
+        <!-- Replace with:  -->
+        <img src="5.png" alt="Group photo" style="width:100%;aspect-ratio:4/3;object-fit:cover;" />
+        <span></span>
+      </div>
+      <div class="photo-caption">\</div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <p>Pre and post-workshop surveys revealed a massive breakdown of stigma among both boys and girls, fostering a safer, more supportive school environment for every student.</p>
+  </div>
+
+  <div class="team-strip">
+    <h4>Project Team</h4>
+    <p>Ojaswee Niroula · Sudin Gurung · Hridika Acharya</p>
+  </div>
+
+  <a href="D://Pragya Nepal/site draft 1.html" class="back-btn">← Back to All Projects</a>
+
+</div>
+
+<footer>
+  <p>© 2024 Pragya Nepal · <a href="mailto:pragya.nepal.official@gmail.com">pragya.nepal.official@gmail.com</a></p>
+</footer>
+
+<script>
+(function () {
+  const canvas = document.getElementById('particle-canvas');
+  const ctx = canvas.getContext('2d');
+  let W, H, particles = [], tick = 0;
+
+  function resize() {
+    W = canvas.width  = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+  }
+
+  function spawn() {
+    return {
+      x: Math.random() * W,
+      y: H + 10,
+      r: Math.random() * 2 + 0.5,
+      speed: Math.random() * 0.4 + 0.15,
+      drift: (Math.random() - 0.5) * 0.3,
+      alpha: Math.random() * 0.5 + 0.2,
+    };
+  }
+
+  for (let i = 0; i < 55; i++) {
+    const p = spawn();
+    p.y = Math.random() * H;
+    particles.push(p);
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    tick += 0.01;
+
+    particles.forEach((p, i) => {
+      p.y -= p.speed;
+      p.x += p.drift + Math.sin(tick + i) * 0.12;
+      if (p.y < -10) { particles[i] = spawn(); }
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(255,255,255,${p.alpha})`;
+      ctx.fill();
+    });
+
+    requestAnimationFrame(draw);
+  }
+
+  window.addEventListener('resize', resize);
+  resize();
+  draw();
+})();
+</script>
+
+</body>
+</html>

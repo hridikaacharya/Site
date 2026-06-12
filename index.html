@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pragya Nepal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+       --green-deep:   #1A7A7A;
+      --green-mid:    #2A9494;
+      --green-light:  #A0D8D8;
+      --green-tint:   #E6F5F5;
+      --cream:        #F4FAFA;
+      --ink:          #1A1A1A;
+      --ink-soft:     #444;
+      --white:        #ffffff;
+      --radius:       12px;
+      --shadow:       0 4px 24px rgba(26,122,122,0.10);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.7;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 1.5px solid var(--green-light);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5vw;
+      height: 70px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-circle {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--green-deep), var(--green-mid));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 2px 10px rgba(44,110,73,0.25);
+    }
+
+    .logo-circle svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .nav-wordmark {
+      font-family: 'Helvetica', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--green-deep);
+      letter-spacing: 0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--ink-soft);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--green-deep); }
+
+    .hero {
+      background: linear-gradient(135deg, var(--green-deep) 0%, var(--green-mid) 100%);
+      color: var(--white);
+      text-align: center;
+      padding: 90px 5vw 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='600' height='600' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='300' cy='300' r='280' fill='none' stroke='rgba(255,255,255,0.04)' stroke-width='60'/%3E%3Ccircle cx='300' cy='300' r='160' fill='none' stroke='rgba(255,255,255,0.04)' stroke-width='40'/%3E%3C/svg%3E") center/600px no-repeat;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--green-light);
+      margin-bottom: 1rem;
+	position: relative;
+  z-index: 10;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garant', serif;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      opacity: 0.88;
+      font-weight: 300;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      position: relative;
+      z-index: 10;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.8rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-white {
+      background: var(--white);
+      color: var(--green-deep);
+    }
+
+    .btn-white:hover {
+      background: var(--green-light);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 1.5px solid rgba(255,255,255,0.6);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.1);
+      transform: translateY(-2px);
+    }
+
+    .wave-divider {
+      display: block;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+      margin-top: -1px;
+    }
+
+    .wave-divider svg { display: block; width: 100%; }
+
+    section { padding: 80px 5vw; }
+
+    .section-label {
+      font-size: 0.73rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--green-deep);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garant', serif;
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title span { color: #40E0D0; }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .about-grid p {
+      color: var(--ink-soft);
+      margin-bottom: 1rem;
+      font-size: 0.97rem;
+    }
+
+    .about-right {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .about-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      border-left: 4px solid var(--green-deep);
+      box-shadow: var(--shadow);
+    }
+
+    .about-card h4 {
+      font-family: 'Cormorant Garant', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--green-deep);
+      margin-bottom: 0.5rem;
+    }
+
+    .about-card p {
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+      margin: 0;
+    }
+
+    #projects { background: var(--green-tint); }
+
+    .projects-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 3rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .project-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.25s, box-shadow 0.25s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(44,110,73,0.15);
+    }
+
+    .project-card-accent {
+      height: 6px;
+      background: linear-gradient(90deg, var(--green-deep), var(--green-light));
+    }
+
+    .project-card-body { padding: 1.6rem; flex: 1; }
+
+    .project-meta {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green-mid);
+      margin-bottom: 0.5rem;
+    }
+
+    .project-card h3 {
+      font-family: 'Cormorant Garant', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 0.75rem;
+      line-height: 1.25;
+    }
+
+    .project-card p {
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+      margin-bottom: 1.2rem;
+    }
+
+    .project-team {
+      font-size: 0.78rem;
+      color: var(--green-deep);
+      font-weight: 500;
+    }
+
+    .project-card-footer {
+      padding: 1rem 1.6rem;
+      border-top: 1px solid var(--green-tint);
+    }
+
+    .project-card-footer a {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--green-deep);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: gap 0.2s;
+    }
+
+    .project-card-footer a:hover { gap: 10px; }
+
+    #get-involved { background: var(--white); }
+
+    .involved-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 3rem;
+    }
+
+.project-card {
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-card * {
+  text-decoration: none;
+}
+
+    .involved-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .involved-card {
+      background: var(--cream);
+      border-radius: var(--radius);
+      padding: 2rem;
+    }
+
+    .involved-card h3 {
+      font-family: 'Cormorant Garant', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--green-deep);
+      margin-bottom: 0.75rem;
+    }
+
+    .involved-card p {
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+      margin-bottom: 1rem;
+    }
+
+    .involved-card a.external-link {
+      display: inline-block;
+      background: var(--green-deep);
+      color: var(--white);
+      padding: 0.55rem 1.4rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .involved-card a.external-link:hover {
+      background: var(--green-mid);
+      transform: translateY(-2px);
+    }
+
+
+	.gallery-mosaic {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: 160px;
+  gap: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gm-item {
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.gm-item.gm-wide { grid-column: span 2; }
+.gm-item.gm-tall { grid-row: span 2; }
+
+.gm-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.gm-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.gm-item:hover .gm-inner img { transform: scale(1.08); }
+
+.gm-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(26,122,122,0.75) 0%, transparent 55%);
+  display: flex;
+  align-items: flex-end;
+  padding: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gm-item:hover .gm-overlay { opacity: 1; }
+
+.gm-overlay span {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 0.04em;
+}
+
+#lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(8,28,28,0.93);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+  backdrop-filter: blur(6px);
+}
+
+#lightbox.open { display: flex; }
+
+#lb-img-wrap {
+  max-width: 88vw;
+  max-height: 76vh;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.6);
+}
+
+#lb-img {
+  max-width: 88vw;
+  max-height: 76vh;
+  object-fit: contain;
+  display: block;
+}
+
+#lb-caption {
+  color: rgba(255,255,255,0.65);
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+#lb-close {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  background: rgba(255,255,255,0.1);
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s;
+  z-index: 1001;
+}
+
+#lb-close:hover { background: rgba(255,255,255,0.2); }
+
+#lb-prev, #lb-next {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.08);
+  border: none;
+  color: white;
+  font-size: 1.4rem;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s;
+  z-index: 1001;
+}
+
+#lb-prev { left: 20px; }
+#lb-next { right: 20px; }
+#lb-prev:hover, #lb-next:hover { background: rgba(255,255,255,0.18); }	
+
+    .volunteer-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .form-field label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: var(--ink);
+    }
+
+    .form-field input,
+    .form-field textarea {
+      padding: 0.6rem 0.9rem;
+      border: 1.5px solid var(--green-light);
+      border-radius: 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      color: var(--ink);
+      background: var(--white);
+      outline: none;
+      transition: border-color 0.2s;
+      resize: vertical;
+    }
+
+    .form-field input:focus,
+    .form-field textarea:focus {
+      border-color: var(--green-deep);
+    }
+
+    .btn-green {
+      background: var(--green-deep);
+      color: var(--white);
+      align-self: flex-start;
+    }
+
+    .btn-green:hover {
+      background: var(--green-mid);
+      transform: translateY(-2px);
+    }
+
+    #gallery { background: var(--green-tint); }
+
+    .gallery-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 3rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .gallery-item {
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .gallery-img-placeholder {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, var(--green-light), var(--green-tint));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: var(--green-deep);
+    }
+
+    .gallery-img-placeholder svg { opacity: 0.4; }
+
+    .gallery-img-placeholder span {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      opacity: 0.5;
+      text-transform: uppercase;
+    }
+
+    .gallery-caption {
+      padding: 0.9rem 1.1rem;
+    }
+
+    .gallery-caption strong {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .gallery-caption span {
+      font-size: 0.78rem;
+      color: var(--green-mid);
+    }
+
+    #team { background: var(--white); }
+
+    .team-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 3rem;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .team-card {
+      text-align: center;
+      padding: 2rem 1rem 1.5rem;
+      background: var(--cream);
+      border-radius: var(--radius);
+      transition: transform 0.2s;
+    }
+
+    .team-card:hover { transform: translateY(-4px); }
+
+    .team-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--green-deep), var(--green-mid));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      color: var(--white);
+      font-family: 'Cormorant Garant', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+	.team-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+    .team-card h4 {
+      font-family: 'Cormorant Garant', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 0.25rem;
+    }
+
+    .team-card p {
+      font-size: 0.78rem;
+      color: var(--green-deep);
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    #contact { background: var(--green-tint); }
+
+    .contact-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .contact-info h2 {
+      font-family: 'Cormorant Garant', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-info p {
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+
+	.team-members {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-top: 0.8rem;
+}
+
+.team-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.team-member img {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--green-light);
+}
+
+.team-member span {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  text-align: center;
+  max-width: 80px;
+}
+
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 1rem;
+    }
+
+    .contact-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--green-deep);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-icon svg { width: 16px; height: 16px; }
+
+    .contact-detail-text {
+      font-size: 0.88rem;
+      color: var(--ink-soft);
+    }
+
+    .contact-detail-text strong {
+      display: block;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 2px;
+    }
+
+    .contact-detail-text a {
+      color: var(--green-deep);
+      text-decoration: none;
+    }
+
+    .contact-form {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-form h3 {
+      font-family: 'Cormorant Garant', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--green-deep);
+      margin-bottom: 1.25rem;
+    }
+
+    footer {
+      background: var(--green-deep);
+      color: rgba(255,255,255,0.75);
+      text-align: center;
+      padding: 2.5rem 5vw;
+    }
+
+    footer .footer-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 0.75rem;
+    }
+
+    footer .footer-logo-circle {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    footer .footer-logo-circle svg { width: 22px; height: 22px; }
+
+    footer .footer-name {
+      font-family: 'Cormorant Garant', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    footer p { font-size: 0.82rem; }
+
+    footer a { color: var(--green-light); text-decoration: none; }
+
+    @media (max-width: 768px) {
+      .about-grid,
+      .contact-wrapper { grid-template-columns: 1fr; gap: 32px; }
+      .nav-links { display: none; }
+    }
+
+	#constellation-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">
+   <img src="logo.jpg" style="width:46px;height:46px;border-radius:50%;" />      
+    <span class="nav-wordmark">Pragya Nepal</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#get-involved">Get Involved</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <canvas id="constellation-canvas"></canvas>
+  <p class="hero-eyebrow">Student-led · Community-powered · Nepal</p>
+  <h1>Her Health, Her Future,<br/>Our Nation.</h1>
+  <p>Pragya Nepal brings health education, rights awareness, and essential resources to women and girls in underserved communities across Nepal.</p>
+  <div class="hero-cta">
+    <a href="#get-involved" class="btn btn-white">Support Our Mission</a>
+<a href="#projects" class="btn btn-outline">Our Projects</a>
+  </div>
+</section>
+
+<span class="wave-divider">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,0 C360,60 1080,60 1440,0 L1440,60 L0,60 Z" fill="#F7F4EE"/>
+  </svg>
+</span>
+
+<section id="about">
+  <div class="projects-header">
+    <p class="section-label">Who We Are</p>
+    <h2 class="section-title"><span>About Pragya Nepal</span></h2>
+  </div>
+  <div class="projects-grid">
+    <div class="project-card">
+      <div class="project-card-accent"></div>
+      <div class="project-card-body">
+        <h3>Who We Are</h3>
+        <p>Pragya Nepal is a student-led initiative working to bring health education, rights awareness, and essential resources to women in underserved communities across Nepal. We believe that knowledge is the first step toward change. As young students, we design and direct community level outreach projects to break taboos, distribute health supplies, and empower the next generation of girls.</p>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-card-accent"></div>
+      <div class="project-card-body">
+        <h3>Breaking the Silence in Nepal</h3>
+        <p>In many parts of Nepal, critical issues like menstrual hygiene, reproductive rights, and female financial independence are deeply stigmatized or rarely discussed openly. This silence leaves young girls without accurate information, isolates them from resources, and forces many to drop out of school or miss out on higher education.</p>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-card-accent"></div>
+      <div class="project-card-body">
+        <h3>Why What We Do Is So Important</h3>
+        <p>We believe you cannot empower a community without first equipping its girls with autonomy over their health and their futures. Because we are students ourselves, we have the unique power to speak directly to our peers, break through old taboos, and introduce new pathways.
+Nepal is a rapidly developing nation, but it cannot reach its full potential when half of its population faces systemic barriers to basic health, education, and resources. True national progress is impossible if young girls are left behind.
+By starting with basic health literacy and expanding into critical areas like financial independence, academic development, and future technical skills, we are building a replicable model for grassroots outreach led entirely by young Nepalis. We aren’t just running workshops but ensuring that the girls who will shape Nepal’s future have the tools, the confidence, and the opportunities to build it.
+</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<span class="wave-divider" style="display:block; background:#F7F4EE; margin-bottom:-1px;">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,60 C360,0 1080,0 1440,60 L1440,60 L0,60 Z" fill="#E8F5EE"/>
+  </svg>
+</span>
+
+<section id="projects">
+  <div class="projects-header">
+    <p class="section-label">What We've Done</p>
+    <h2 class="section-title"><span>Our Projects</span></h2>
+  </div>
+ <div class="projects-grid">
+    <a href="haatemalo.html" class="project-card">
+      <div class="gallery-img-placeholder">
+	<img src="18.png" alt="Project Haatemalo" style="width:100%;aspect-ratio:16/9;object-fit:cover;" />
+        <!-- Replace with: <img src="images/haatemalo.jpg" alt="Project Haatemalo" style="width:100%;aspect-ratio:16/9;object-fit:cover;" /> -->
+      </div>
+      <div class="project-card-body">
+        <p class="project-meta">Mary Ward School, Lubhu · October 2024</p>
+        <h3>Project Haatemalo</h3>
+      </div>
+    </a>
+    <a href="shristi-workshop.html" class="project-card">
+      <div class="gallery-img-placeholder">
+	<img src="1.png" alt="Shristi Workshop" style="width:100%;aspect-ratio:16/9;object-fit:cover;" />
+        <!-- Replace with: <img src="images/shristi.jpg" alt="Shristi Workshop" style="width:100%;aspect-ratio:16/9;object-fit:cover;" /> -->
+      </div>
+      <div class="project-card-body">
+        <p class="project-meta">Shristi English School, Golfutar · June 2024</p>
+        <h3>Inclusive Menstrual Health Workshop</h3>
+      </div>
+    </a>
+    <a href="health-camp.html" class="project-card">
+      <div class="gallery-img-placeholder">
+	<img src="13.png" alt="Health Camp" style="width:100%;aspect-ratio:16/9;object-fit:cover;" />
+        <!-- Replace with: <img src="images/health-camp.jpg" alt="Health Camp" style="width:100%;aspect-ratio:16/9;object-fit:cover;" /> -->
+      </div>
+      <div class="project-card-body">
+        <p class="project-meta">Buddhapark, Swoyambhu · May 2024</p>
+        <h3>Free Community Health Checkup Camp</h3>
+      </div>
+    </a>
+  </div>
+</section>
+
+<span class="wave-divider" style="display:block; background:#E8F5EE; margin-bottom:-1px;">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,0 C360,60 1080,60 1440,0 L1440,60 L0,60 Z" fill="#ffffff"/>
+  </svg>
+</span>
+
+<section id="get-involved">
+  <div class="involved-header">
+    <p class="section-label">Take Action</p>
+    <h2 class="section-title"> <span>Support Our Mission</span></h2>
+    <p style="color:var(--ink-soft); font-size:0.95rem;">Whether you choose to invest financially, join us on the ground, or build a partnership, your involvement directly empowers young girls and underserved communities across Nepal.</p>
+  </div>
+  <div class="involved-grid">
+    <div class="involved-card">
+      <h3>🩸 Donate to Our Next Initiative</h3>
+      <p>We are currently raising funds for our upcoming 5-day grassroots outreach project this July in Karkineta, Parbat. Your contribution directly funds interactive health workshops, reproductive rights education, and the distribution of essential sanitary supplies and stationery packs.</p>
+      <a href="https://www.gofundme.com/f/support-workshops-for-women-in-rural-nepal" class="external-link" target="_blank" rel="noopener">Donate on GoFundMe →</a>
+    </div>
+    <div class="involved-card">
+      <h3>✊ Volunteer With Us</h3>
+      <p>We are always looking for passionate young students, researchers, and creators to join our core team or help facilitate our localized outreach projects and upcoming workshops. Fill out the form to get started.</p>
+      <form class="volunteer-form" id="volunteer-form" action="https://formspree.io/f/xykanlal" method="POST">
+        <div class="form-field">
+          <label for="vol-name">Name</label>
+          <input type="text" id="vol-name" name="name" placeholder="Your full name" />
+        </div>
+        <div class="form-field">
+          <label for="vol-email">Email</label>
+          <input type="email" id="vol-email" name="email" placeholder="you@example.com" />
+        </div>
+        <div class="form-field">
+          <label for="vol-phone">Contact Number</label>
+          <input type="tel" id="vol-phone" name="phone" placeholder="+977 ..." />
+        </div>
+        <div class="form-field">
+          <label for="vol-why">Why are you interested in volunteering?</label>
+          <textarea id="vol-why" name="why" rows="3" placeholder="Tell us a little about yourself..."></textarea>
+        </div>
+        <button class="btn btn-green" type="button" onclick="handleSubmit('volunteer-form', this)">Submit Application</button>
+      </form>
+    </div>
+    <div class="involved-card">
+      <h3>💼 Collaborate / Partner With Us</h3>
+      <p>We believe in the power of collective impact. If you represent an NGO, a student group, a healthcare organization, or a corporate sponsor looking to co-design initiatives, share resources, or provide mentorship, we would love to connect.</p>
+      <p>Reach out to us directly to explore how we can work together:</p>
+      <a href="mailto:pragya.nepal.official@gmail.com" class="external-link">pragya.nepal.official@gmail.com →</a>
+    </div>
+  </div>
+</section>
+
+<span class="wave-divider" style="display:block; background:#ffffff; margin-bottom:-1px;">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,60 C360,0 1080,0 1440,60 L1440,60 L0,60 Z" fill="#E8F5EE"/>
+  </svg>
+</span>
+
+<section id="gallery">
+  <div class="gallery-header">
+    <p class="section-label">In the Field</p>
+    <h2 class="section-title">Our <span>Gallery</span></h2>
+    <p style="color:var(--ink-soft);font-size:0.92rem;margin-top:0.5rem;">Click any photo to view it full screen</p>
+  </div>
+
+  <div class="gallery-mosaic">
+
+    <div class="gm-item gm-tall" onclick="openLightbox(0)">
+      <div class="gm-inner"><img src="1.png" alt="" style="width:100%;height:100%;object-fit:cover;" />
+        <div class="gm-overlay"><span></span></div>
+      </div>
+    </div>
+
+    <div class="gm-item" onclick="openLightbox(1)">
+      <div class="gm-inner"><img src="2.png" alt="" style="width:100%;height:100%;object-fit:cover;" />
+        <div class="gm-overlay"><span></span></div>
+      </div>
+    </div>
+
+    <div class="gm-item" onclick="openLightbox(2)">
+      <div class="gm-inner"><img src="3.png" alt="" style="width:100%;height:100%;object-fit:cover;" />
+        <div class="gm-overlay"><span></span></div>
+      </div>
+    </div>
+
+    <div class="gm-item gm-wide" onclick="openLightbox(3)">
+      <div class="gm-inner"><img src="4.png" alt="" style="width:100%;height:100%;object-fit:cover;" />
+        <div class="gm-overlay"><span></span></div>
+      </div>
+    </div>
+
+    <div class="gm-item" onclick="openLightbox(4)">
+      <div class="gm-inner"><img src="5.png" alt="" style="width:100%;height:100%;object-fit:cover;" />
+        <div class="gm-overlay"><span></span></div>
+      </div>
+    </div>
+
+    <div class="gm-item" onclick="openLightbox(5)">
+      <div class="gm-inner"><img src="6.png" alt="" style="width:100%;height:100%;object-fit:cover;" />
+        <div class="gm-overlay"><span></span></div>
+      </div>
+    </div>
+
+    <div class="gm-item gm-tall" onclick="openLightbox(6)">
+      <div class="gm-inner"><img src="7.png" alt="" style="width:100%;height:100%;object-fit:cover;" />
+        <div class="gm-overlay"><span></span></div>
+      </div>
+    </div>
+
+    <div class="gm-item" onclick="openLightbox(7)">
+      <div class="gm-inner"><img src="8.png" alt="" style="width:100%;height:100%;object-fit:cover;" />
+        <div class="gm-overlay"><span></span></div>
+      </div>
+    </div>
+
+    <div class="gm-item" onclick="openLightbox(8)">
+      <div class="gm-inner"><img src="9.png" alt="" style="width:100%;height:100%;object-fit:cover;" />
+        <div class="gm-overlay"><span></span></div>
+      </div>
+    </div>
+
+    <div class="gm-item gm-wide" onclick="openLightbox(9)">
+      <div class="gm-inner"><img src="10.png" alt="" style="width:100%;height:100%;object-fit:cover;" />
+        <div class="gm-overlay"><span></span></div>
+      </div>
+    </div>
+
+    <div class="gm-item" onclick="openLightbox(10)">
+      <div class="gm-inner"><img src="11.png" alt="" style="width:100%;height:100%;object-fit:cover;" />
+        <div class="gm-overlay"><span></span></div>
+      </div>
+    </div>
+
+    <div class="gm-item" onclick="openLightbox(11)">
+      <div class="gm-inner"><img src="12.png" alt="" style="width:100%;height:100%;object-fit:cover;" />
+        <div class="gm-overlay"><span></span></div>
+      </div>
+    </div>
+
+    <div class="gm-item gm-tall" onclick="openLightbox(12)">
+      <div class="gm-inner"><img src="13.png" alt="" style="width:100%;height:100%;object-fit:cover;" />
+        <div class="gm-overlay"><span></span></div>
+      </div>
+    </div>
+
+    <div class="gm-item" onclick="openLightbox(13)">
+      <div class="gm-inner"><img src="14.png" alt="" style="width:100%;height:100%;object-fit:cover;" />
+        <div class="gm-overlay"><span></span></div>
+      </div>
+    </div>
+
+    <div class="gm-item" onclick="openLightbox(14)">
+      <div class="gm-inner"><img src="15.png" alt="" style="width:100%;height:100%;object-fit:cover;" />
+        <div class="gm-overlay"><span></span></div>
+      </div>
+    </div>
+
+    <div class="gm-item gm-wide" onclick="openLightbox(15)">
+      <div class="gm-inner"><img src="16.png" alt="" style="width:100%;height:100%;object-fit:cover;" />
+        <div class="gm-overlay"><span></span></div>
+      </div>
+    </div>
+
+    <div class="gm-item" onclick="openLightbox(16)">
+      <div class="gm-inner"><img src="17.png" alt="" style="width:100%;height:100%;object-fit:cover;" />
+        <div class="gm-overlay"><span></span></div>
+      </div>
+    </div>
+
+    <div class="gm-item" onclick="openLightbox(17)">
+      <div class="gm-inner"><img src="18.png" alt="" style="width:100%;height:100%;object-fit:cover;" />
+        <div class="gm-overlay"><span></span></div>
+      </div>
+    </div>
+
+    <div class="gm-item gm-tall" onclick="openLightbox(18)">
+      <div class="gm-inner"><img src="19.png" alt="" style="width:100%;height:100%;object-fit:cover;" />
+        <div class="gm-overlay"><span></span></div>
+      </div>
+    </div>
+
+    <div class="gm-item" onclick="openLightbox(19)">
+      <div class="gm-inner"><img src="20.png" alt="" style="width:100%;height:100%;object-fit:cover;" />
+        <div class="gm-overlay"><span></span></div>
+      </div>
+    </div>
+
+    <div class="gm-item" onclick="openLightbox(20)">
+      <div class="gm-inner"><img src="21.png" alt="" style="width:100%;height:100%;object-fit:cover;" />
+        <div class="gm-overlay"><span></span></div>
+      </div>
+    </div>
+
+    <div class="gm-item gm-wide" onclick="openLightbox(21)">
+      <div class="gm-inner"><img src="22.jpg" alt="" style="width:100%;height:100%;object-fit:cover;" />
+        <div class="gm-overlay"><span></span></div>
+      </div>
+    </div>
+
+    <div class="gm-item" onclick="openLightbox(22)">
+      <div class="gm-inner"><img src="23.jpg" alt="" style="width:100%;height:100%;object-fit:cover;" />
+        <div class="gm-overlay"><span></span></div>
+      </div>
+    </div>
+
+    <div class="gm-item" onclick="openLightbox(23)">
+      <div class="gm-inner"><img src="24.jpg" alt="" style="width:100%;height:100%;object-fit:cover;" />
+        <div class="gm-overlay"><span></span></div>
+      </div>
+    </div>
+
+    <div class="gm-item gm-tall" onclick="openLightbox(24)">
+      <div class="gm-inner"><img src="25.jpg" alt="" style="width:100%;height:100%;object-fit:cover;" />
+        <div class="gm-overlay"><span></span></div>
+      </div>
+    </div>
+
+    <div class="gm-item gm-wide" onclick="openLightbox(25)">
+      <div class="gm-inner"><img src="26.jpg" alt="" style="width:100%;height:100%;object-fit:cover;" />
+        <div class="gm-overlay"><span></span></div>
+      </div>
+    </div>
+
+    <div class="gm-item" onclick="openLightbox(26)">
+      <div class="gm-inner"><img src="27.jpg" alt="" style="width:100%;height:100%;object-fit:cover;" />
+        <div class="gm-overlay"><span></span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="lightbox" onclick="closeLightbox()">
+    <button id="lb-close" onclick="closeLightbox()">✕</button>
+    <button id="lb-prev" onclick="event.stopPropagation(); shiftLightbox(-1)">&#8592;</button>
+    <button id="lb-next" onclick="event.stopPropagation(); shiftLightbox(1)">&#8594;</button>
+    <div id="lb-img-wrap">
+      <img id="lb-img" src="" alt="" />
+    </div>
+    <p id="lb-caption"></p>
+  </div>
+
+</section>
+<span class="wave-divider" style="display:block; background:#E8F5EE; margin-bottom:-1px;">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,0 C360,60 1080,60 1440,0 L1440,60 L0,60 Z" fill="#ffffff"/>
+  </svg>
+</span>
+
+<section id="team">
+  <div class="team-header">
+    <p class="section-label">The People Behind It</p>
+    <h2 class="section-title"><span>Meet Our Team</span></h2>
+  </div>
+  <div class="team-grid">
+    <div class="team-card">
+      <div class="team-avatar">
+  <img src="Hridika.png" alt="Hridika Acharya" />
+</div>
+      <h4>Hridika Acharya</h4>
+      <p>Founder &amp; Executive Director</p>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">
+  <img src="dipasana.png" alt="Hridika Acharya" />
+</div>
+      <h4>Dipasana Regmi</h4>
+      <p>Operations Director</p>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">
+  <img src="prasun.png" alt="Hridika Acharya" />
+</div>
+      <h4>Prasun Adhikari</h4>
+      <p>Web &amp; Technology Lead</p>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">
+  <img src="natalie.jpg" alt="Hridika Acharya" />
+</div>
+      <h4>Natalie Ghimire</h4>
+      <p>Communications &amp; Social Media Director</p>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">
+  <img src="aditi.png" alt="Hridika Acharya" />
+</div>
+      <h4>Aditi Baral</h4>
+      <p>Outreach &amp; Project Coordinator</p>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">
+  <img src="aparna.png" alt="Hridika Acharya" />
+</div>
+      <h4>Aparna Mishra</h4>
+      <p>Logistics &amp; Project Planning Coordinator</p>
+    </div>
+  </div>
+</section>
+
+<span class="wave-divider" style="display:block; background:#ffffff; margin-bottom:-1px;">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,60 C360,0 1080,0 1440,60 L1440,60 L0,60 Z" fill="#E8F5EE"/>
+  </svg>
+</span>
+
+<section id="contact">
+  <div class="contact-wrapper">
+    <div class="contact-info">
+      <p class="section-label">Reach Out</p>
+      <h2>Get In Touch</h2>
+      <p>Have questions about Pragya Nepal or want to be involved? We'd love to hear from you and help you join our movement.</p>
+      <div class="contact-detail">
+        <div class="contact-icon">
+          <svg viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg"><path d="M2 3h12v10H2z"/><path d="M2 3l6 6 6-6"/></svg>
+        </div>
+        <div class="contact-detail-text">
+          <strong>Email</strong>
+          <a href="mailto:pragya.nepal.official@gmail.com">pragya.nepal.official@gmail.com</a>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-icon">
+          <svg viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg"><path d="M13 10.5c-.6.6-1.4.8-2.1.5C9 10.3 7.5 9 6.2 7.8 5 6.5 3.7 5 3 3.1c-.3-.7-.1-1.5.5-2.1L4.8.8C5.2.4 5.8.4 6.1.8L7.8 2.5c.3.4.3 1 0 1.4L7 4.7c.8 1.2 1.7 2.3 3.3 3.3l.7-.8c.4-.4 1-.4 1.4 0l1.7 1.7c.4.4.4 1 .1 1.4l-1.2 1.2z"/></svg>
+        </div>
+        <div class="contact-detail-text">
+          <strong>Phone</strong>
+          +977 9847462902 — Hridika Acharya<br/>
+          +977 9767552908 — Dipasana Regmi
+        </div>
+      </div>
+    </div>
+    <div class="contact-form">
+      <h3>Send Us a Message</h3>
+      <form class="volunteer-form" id="contact-form" action="https://formspree.io/f/mvznwdeo" method="POST">
+        <div class="form-field">
+          <label for="con-name">Name</label>
+          <input type="text" id="con-name" name="name" placeholder="Your full name" />
+        </div>
+        <div class="form-field">
+          <label for="con-email">Email</label>
+          <input type="email" id="con-email" name="email" placeholder="you@example.com" />
+        </div>
+        <div class="form-field">
+          <label for="con-msg">Message</label>
+          <textarea id="con-msg" rows="4" name="message" placeholder="How can we help?"></textarea>
+        </div>
+        <button class="btn btn-green" type="button" onclick="handleSubmit('contact-form', this)">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">
+    <div class="footer-logo-circle">
+      <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="14" cy="12" r="3" fill="rgba(255,255,255,0.9)"/>
+        <path d="M14 14 C14 14 7 18 7 22 C9 20 11 19 14 18 C17 19 19 20 21 22 C21 18 14 14 14 14Z" fill="rgba(255,255,255,0.85)"/>
+        <path d="M14 10 C14 10 9 5 7 6 C9 7 10 9 14 10Z" fill="rgba(168,213,186,0.9)"/>
+        <path d="M14 10 C14 10 19 5 21 6 C19 7 18 9 14 10Z" fill="rgba(168,213,186,0.9)"/>
+        <circle cx="8" cy="6" r="1.2" fill="rgba(255,255,255,0.9)"/>
+        <circle cx="20" cy="6" r="1.2" fill="rgba(255,255,255,0.9)"/>
+      </svg>
+    </div>
+    <span class="footer-name">Pragya Nepal</span>
+  </div>
+  <p>Student-led · Community-powered · Nepal</p>
+  <p style="margin-top:0.5rem;">
+    <a href="mailto:pragya.nepal.official@gmail.com">pragya.nepal.official@gmail.com</a>
+  </p>
+  <p style="margin-top:1rem; font-size:0.75rem; opacity:0.5;">© 2024 Pragya Nepal. All rights reserved.</p>
+</footer>
+
+<script>
+  const GALLERY_SRCS = [
+    '1.png','2.png','3.png','4.png','5.png','6.png','7.png',
+    '8.png','9.png','10.png','11.png','12.png','13.png','14.png',
+    '15.png','16.png','17.png','18.png','19.png','20.png','21.png',
+    '22.jpg','23.jpg','24.jpg','25.jpg','26.jpg','27.jpg'
+  ];
+
+  const GALLERY_CAPTIONS = [
+      ];
+
+  let currentIndex = 0;
+
+  function openLightbox(index) {
+    currentIndex = index;
+    document.getElementById('lb-img').src = GALLERY_SRCS[index];
+    document.getElementById('lb-caption').textContent = GALLERY_CAPTIONS[index];
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function shiftLightbox(dir) {
+    currentIndex = (currentIndex + dir + 27) % 27;
+    openLightbox(currentIndex);
+  }
+
+  document.addEventListener('keydown', function(e) {
+    const lb = document.getElementById('lightbox');
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') shiftLightbox(-1);
+    if (e.key === 'ArrowRight') shiftLightbox(1);
+  });
+</script>
+
+<script>
+(function () {
+  const canvas = document.getElementById('constellation-canvas');
+  const ctx = canvas.getContext('2d');
+ 
+  const CONSTELLATIONS = [
+    {
+      name: 'Orion',
+      color: 'rgba(180, 220, 255, VAL)',
+      stars: [
+        { x: 0.52, y: 0.18, r: 2.8, name: 'Betelgeuse' },
+        { x: 0.62, y: 0.20, r: 2.2 },
+        { x: 0.67, y: 0.28, r: 1.8 },
+        { x: 0.65, y: 0.38, r: 3.2, name: 'Rigel' },
+        { x: 0.55, y: 0.42, r: 1.6 },
+        { x: 0.50, y: 0.30, r: 1.4 },
+        { x: 0.53, y: 0.30, r: 1.4 },
+        { x: 0.56, y: 0.30, r: 1.4 },
+        { x: 0.44, y: 0.38, r: 2.0 },
+        { x: 0.60, y: 0.14, r: 1.5 },
+        { x: 0.63, y: 0.10, r: 1.3 },
+      ],
+      lines: [
+        [0,1],[1,2],[2,3],[3,4],[4,8],[0,8],
+        [5,6],[6,7],
+        [0,5],[1,9],[9,10]
+      ]
+    },
+    {
+      name: 'Cassiopeia',
+      color: 'rgba(200, 180, 255, VAL)',
+      stars: [
+        { x: 0.10, y: 0.08, r: 2.0 },
+        { x: 0.17, y: 0.05, r: 2.4, name: 'Schedar' },
+        { x: 0.23, y: 0.09, r: 1.8 },
+        { x: 0.29, y: 0.06, r: 2.0 },
+        { x: 0.36, y: 0.10, r: 1.6 },
+      ],
+      lines: [[0,1],[1,2],[2,3],[3,4]]
+    },
+    {
+      name: 'Ursa Major',
+      color: 'rgba(180, 255, 220, VAL)',
+      stars: [
+        { x: 0.05, y: 0.35, r: 2.2, name: 'Dubhe' },
+        { x: 0.10, y: 0.40, r: 2.0, name: 'Merak' },
+        { x: 0.14, y: 0.50, r: 1.8 },
+        { x: 0.09, y: 0.56, r: 1.8 },
+        { x: 0.16, y: 0.62, r: 1.6 },
+        { x: 0.24, y: 0.60, r: 1.8 },
+        { x: 0.30, y: 0.53, r: 2.0, name: 'Alkaid' },
+      ],
+      lines: [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6]]
+    },
+    {
+      name: 'Scorpius',
+      color: 'rgba(255, 200, 160, VAL)',
+      stars: [
+        { x: 0.72, y: 0.15, r: 3.0, name: 'Antares' },
+        { x: 0.70, y: 0.22, r: 1.6 },
+        { x: 0.68, y: 0.30, r: 1.8 },
+        { x: 0.72, y: 0.38, r: 1.5 },
+        { x: 0.76, y: 0.44, r: 1.5 },
+        { x: 0.80, y: 0.48, r: 1.6 },
+        { x: 0.85, y: 0.44, r: 1.4 },
+        { x: 0.89, y: 0.40, r: 1.4 },
+        { x: 0.64, y: 0.10, r: 1.5 },
+        { x: 0.67, y: 0.08, r: 1.5 },
+        { x: 0.74, y: 0.08, r: 1.6 },
+      ],
+      lines: [
+        [0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],
+        [8,9],[9,10],[10,0]
+      ]
+    },
+    {
+      name: 'Cygnus',
+      color: 'rgba(220, 240, 255, VAL)',
+      stars: [
+        { x: 0.38, y: 0.15, r: 2.8, name: 'Deneb' },
+        { x: 0.38, y: 0.26, r: 1.5 },
+        { x: 0.38, y: 0.36, r: 1.8, name: 'Sadr' },
+        { x: 0.38, y: 0.46, r: 1.5 },
+        { x: 0.38, y: 0.55, r: 2.2, name: 'Albireo' },
+        { x: 0.28, y: 0.36, r: 1.4 },
+        { x: 0.20, y: 0.36, r: 1.3 },
+        { x: 0.48, y: 0.36, r: 1.4 },
+        { x: 0.57, y: 0.36, r: 1.3 },
+      ],
+      lines: [[0,1],[1,2],[2,3],[3,4],[5,2],[2,7],[6,5],[7,8]]
+    },
+    {
+      name: 'Eridanus',
+      color: 'rgba(255, 220, 200, VAL)',
+      stars: [
+        { x: 0.82, y: 0.12, r: 1.4 },
+        { x: 0.86, y: 0.18, r: 1.3 },
+        { x: 0.90, y: 0.25, r: 1.4 },
+        { x: 0.88, y: 0.33, r: 1.3 },
+        { x: 0.84, y: 0.40, r: 1.5 },
+        { x: 0.88, y: 0.55, r: 1.3 },
+        { x: 0.92, y: 0.62, r: 1.4 },
+        { x: 0.87, y: 0.70, r: 1.3 },
+        { x: 0.80, y: 0.74, r: 2.2, name: 'Achernar' },
+      ],
+      lines: [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,8]]
+    }
+  ];
+ 
+  let W, H, driftX = 0, driftY = 0, tick = 0;
+ 
+  function resize() {
+    W = canvas.width  = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+  }
+ 
+  function drawStar(x, y, r, alpha, color) {
+    const grd = ctx.createRadialGradient(x, y, 0, x, y, r * 3);
+    grd.addColorStop(0,   color.replace('VAL', String(alpha)));
+    grd.addColorStop(0.4, color.replace('VAL', String(alpha * 0.6)));
+    grd.addColorStop(1,   color.replace('VAL', '0'));
+    ctx.beginPath();
+    ctx.arc(x, y, r * 3, 0, Math.PI * 2);
+    ctx.fillStyle = grd;
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(x, y, r * 0.7, 0, Math.PI * 2);
+    ctx.fillStyle = color.replace('VAL', String(Math.min(1, alpha * 1.4)));
+    ctx.fill();
+  }
+ 
+  function drawLine(x1, y1, x2, y2, alpha, color) {
+    ctx.beginPath();
+    ctx.moveTo(x1, y1);
+    ctx.lineTo(x2, y2);
+    ctx.strokeStyle = color.replace('VAL', String(alpha * 0.35));
+    ctx.lineWidth = 0.8;
+    ctx.stroke();
+  }
+ 
+  function twinkle(base, t, seed) {
+    return base + Math.sin(t * 0.7 + seed * 137.5) * 0.18;
+  }
+ 
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+ 
+    tick += 0.005;
+    driftX = Math.sin(tick * 0.0523) * W * 0.38;
+    driftY = (tick * 0.012) % (H * 0.15) - H * 0.05;
+ 
+    CONSTELLATIONS.forEach((con, ci) => {
+      const px = con.stars.map((s, si) => ({
+        x: s.x * W + driftX + Math.sin(tick * 0.15 + si * 2.1 + ci) * 1.5,
+        y: s.y * H + driftY + Math.cos(tick * 0.12 + si * 1.7 + ci) * 1.2,
+      }));
+ 
+      con.lines.forEach(([a, b]) => {
+        drawLine(px[a].x, px[a].y, px[b].x, px[b].y, 0.7, con.color);
+      });
+ 
+      con.stars.forEach((s, si) => {
+        const alpha = twinkle(0.75, tick, si + ci * 11);
+        drawStar(px[si].x, px[si].y, s.r, alpha, con.color);
+      });
+ 
+      
+    });
+ 
+    requestAnimationFrame(draw);
+  }
+ 
+  window.addEventListener('resize', resize);
+  resize();
+  draw();
+})();
+</script>
+
+<script>
+  async function handleSubmit(formId, btn) {
+    const form = document.getElementById(formId);
+    const data = new FormData(form);
+    const action = form.action;
+
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    try {
+      const res = await fetch(action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        form.reset();
+        btn.textContent = 'Your response has been recorded!';
+        btn.style.background = 'var(--green-mid)';
+        setTimeout(() => {
+          btn.textContent = formId === 'volunteer-form' ? 'Submit Application' : 'Send Message';
+          btn.style.background = '';
+          btn.disabled = false;
+        }, 4000);
+      } else {
+        btn.textContent = 'Something went wrong. Try again.';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.textContent = 'Something went wrong. Try again.';
+      btn.disabled = false;
+    }
+  }
+</script>
+
+</body>
+</html>
