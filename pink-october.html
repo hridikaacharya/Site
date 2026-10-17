@@ -1,0 +1,1284 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pink October — Breast Cancer Awareness — Pragya Nepal</title>
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="favicon_io/site.webmanifest" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* ========================================================= */
+      /* RESET & THEME VARIABLES                                   */
+      /* ========================================================= */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        /* Breast Cancer Palette */
+        --brand-deep: #4f0b1e;
+        --brand-wine: #73122e;
+        --brand-primary: #8e173a;
+        --brand-accent: #b0234d;
+        --brand-soft: #f4bac9;
+        --brand-tint: #fdf2f5;
+        --brand-border: #f5cbd6;
+
+        --bg-page: #faf9f7;
+        --bg-card: #ffffff;
+        --text-main: #111827;
+        --text-body: #1f2937;
+        --text-muted: #4b5563;
+        --border: #e5e7eb;
+
+        --radius: 4px;
+        --container-max: 1200px;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        background-color: var(--bg-page);
+        color: var(--text-body);
+        line-height: 1.65;
+        font-size: 15px;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .container {
+        max-width: var(--container-max);
+        margin: 0 auto;
+        padding: 0 24px;
+        width: 100%;
+      }
+
+      /* ========================================================= */
+      /* 1. EXACT NAV BAR (Same content as other pages, theme color)*/
+      /* ========================================================= */
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: #ffffff;
+        border-bottom: 1.5px solid var(--brand-border);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 5vw;
+        height: 70px;
+      }
+
+      .nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+      }
+
+      .logo-img {
+        width: 46px;
+        height: 46px;
+        object-fit: contain;
+        border-radius: 50%;
+      }
+
+      .nav-wordmark {
+        font-family: "Playfair Display", serif;
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: var(--brand-wine);
+      }
+
+      .nav-back {
+        font-size: 0.88rem;
+        font-weight: 500;
+        color: var(--text-muted);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        transition: color 0.2s;
+      }
+
+      .nav-back:hover {
+        color: var(--brand-wine);
+      }
+
+      /* ========================================================= */
+      /* 2. BIGGER HERO BANNER (NO EYEBROW TEXT)                   */
+      /* ========================================================= */
+      .hero-banner {
+        background:
+          linear-gradient(
+            to bottom,
+            rgba(79, 11, 30, 0.68),
+            rgba(40, 5, 14, 0.74)
+          ),
+          url("cancer program/WhatsApp Image 2026-10-16 at 7.12.52 PM (1).jpeg")
+            center/cover no-repeat;
+        background-attachment: scroll, fixed;
+        color: #ffffff;
+        text-align: center;
+        padding: 135px 24px 120px;
+        min-height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .hero-banner h1 {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: clamp(3.2rem, 6.5vw, 5.2rem);
+        font-weight: 700;
+        line-height: 1.1;
+        margin-bottom: 1.25rem;
+        color: #ffffff;
+        text-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
+        letter-spacing: -0.01em;
+      }
+
+      .hero-subtitle {
+        font-size: 1.15rem;
+        color: #fee7ee;
+        max-width: 680px;
+        margin: 0 auto;
+        line-height: 1.7;
+      }
+
+      /* ========================================================= */
+      /* ========================================================= */
+      /* 3. SECTION SPACING & TITLES                               */
+      /* ========================================================= */
+      .section-block {
+        padding: 72px 0;
+      }
+
+      .section-block.alt-bg {
+        background-color: #ffffff;
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .section-header {
+        margin-bottom: 32px;
+      }
+
+      .section-tag {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--brand-wine);
+        margin-bottom: 8px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .section-tag::before {
+        content: "[";
+        opacity: 0.5;
+      }
+
+      .section-tag::after {
+        content: "]";
+        opacity: 0.5;
+      }
+
+      .section-title {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: clamp(1.85rem, 3vw, 2.35rem);
+        font-weight: 700;
+        color: var(--text-main);
+        line-height: 1.25;
+        letter-spacing: -0.01em;
+      }
+
+      /* Graphic Overview Split Layout */
+      .overview-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 48px;
+        align-items: center;
+      }
+
+      .overview-content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .overview-text {
+        font-size: 1.05rem;
+        color: var(--text-body);
+        line-height: 1.85;
+        margin: 0;
+      }
+
+      /* Overview Graphic Media Frame */
+      .overview-media-wrapper {
+        position: relative;
+        padding: 12px;
+      }
+
+      .overview-offset-border {
+        position: absolute;
+        inset: 0 0 24px 24px;
+        border: 1.5px solid var(--brand-soft);
+        border-radius: var(--radius);
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .overview-media-card {
+        position: relative;
+        background: #0e070a;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        overflow: hidden;
+        z-index: 2;
+        box-shadow: 0 16px 36px rgba(79, 11, 30, 0.1);
+      }
+
+      .overview-media-card img {
+        width: 100%;
+        height: 380px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .overview-media-meta {
+        padding: 12px 16px;
+        background: #ffffff;
+        border-top: 1px solid var(--border);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.76rem;
+        color: var(--text-muted);
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+
+      .crosshair-corner {
+        position: absolute;
+        font-size: 13px;
+        font-weight: 400;
+        color: var(--brand-wine);
+        opacity: 0.45;
+        line-height: 1;
+        user-select: none;
+        pointer-events: none;
+      }
+
+      .crosshair-top-left {
+        top: 6px;
+        left: 6px;
+      }
+      .crosshair-bottom-right {
+        bottom: 6px;
+        right: 6px;
+      }
+
+      /* ========================================================= */
+      /* 4. BLACK & WHITE SLIDESHOW (COLOR ON HOVER + ACCORDION)  */
+      /* ========================================================= */
+      .marquee-outer {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        padding: 12px 0 20px;
+      }
+
+      .marquee-track {
+        display: flex;
+        gap: 16px;
+        width: max-content;
+        animation: marqueeScroll 85s linear infinite;
+        will-change: transform;
+      }
+
+      .marquee-track:hover {
+        animation-play-state: paused;
+      }
+
+      @keyframes marqueeScroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      .marquee-card {
+        flex: 0 0 300px;
+        height: 200px;
+        border-radius: var(--radius);
+        overflow: hidden;
+        background: #0e070a;
+        border: 1px solid var(--border);
+        cursor: pointer;
+        user-select: none;
+        transition:
+          transform 0.35s ease,
+          opacity 0.35s ease;
+      }
+
+      /* B&W by default using simple CSS */
+      .marquee-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        filter: grayscale(100%);
+        transition: filter 0.35s ease;
+      }
+
+      /* Interactive Feel: On hover scale image, slightly contract others, restore color */
+      .marquee-track:hover .marquee-card {
+        transform: scale(0.96);
+        opacity: 0.7;
+      }
+
+      .marquee-track .marquee-card:hover {
+        transform: scale(1.05);
+        opacity: 1;
+        z-index: 5;
+      }
+
+      .marquee-card:hover img {
+        filter: grayscale(0%);
+      }
+
+      /* ========================================================= */
+      /* 5. FOCUS AREA SECTION (GRAPHIC ELEMENTS & BIG NUMBERS)    */
+      /* ========================================================= */
+      .focus-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin-top: 24px;
+      }
+
+      .focus-card {
+        background: var(--bg-card);
+        border-radius: var(--radius);
+        padding: 28px 24px;
+        border: 1px solid var(--border);
+        border-top: 3px solid var(--brand-wine);
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+        transition:
+          transform 0.25s ease,
+          border-color 0.25s ease,
+          box-shadow 0.25s ease;
+        background-image: radial-gradient(
+          circle,
+          rgba(115, 18, 46, 0.05) 1px,
+          transparent 1px
+        );
+        background-size: 16px 16px;
+      }
+
+      .focus-card:hover {
+        border-color: var(--brand-border);
+        border-top-color: var(--brand-accent);
+        transform: translateY(-3px);
+        box-shadow: 0 12px 28px rgba(79, 11, 30, 0.07);
+      }
+
+      /* Big Number on Left with reduced opacity */
+      .focus-card-number {
+        font-family: "Playfair Display", serif;
+        font-size: 3.6rem;
+        font-weight: 700;
+        line-height: 0.9;
+        color: var(--brand-wine);
+        opacity: 0.28;
+        flex-shrink: 0;
+        user-select: none;
+      }
+
+      .focus-card-body h3 {
+        font-size: 1.18rem;
+        font-weight: 700;
+        color: var(--text-main);
+        margin-bottom: 8px;
+        letter-spacing: -0.01em;
+      }
+
+      .focus-card-body p {
+        font-size: 0.92rem;
+        color: var(--text-body);
+        line-height: 1.65;
+        margin: 0;
+      }
+
+      /* ========================================================= */
+      /* 6. ORBITAL CIRCULAR VIDEO ARENA (MASSIVE ENLARGED THEATER)*/
+      /* ========================================================= */
+      .orbital-wrapper {
+        position: relative;
+        width: 100%;
+        max-width: 760px;
+        aspect-ratio: 1 / 1;
+        margin: 36px auto 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Faint decorative orbit path */
+      .orbital-path {
+        position: absolute;
+        width: 86%;
+        height: 86%;
+        border-radius: 50%;
+        border: 1.5px dashed rgba(115, 18, 46, 0.2);
+        pointer-events: none;
+      }
+
+      /* Large Center Video Container (Circular default, morphs to grand widescreen theater when enlarged) */
+      .orbital-center-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 66%;
+        height: 66%;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 4px solid var(--brand-wine);
+        box-shadow:
+          0 16px 48px rgba(79, 11, 30, 0.35),
+          0 0 0 10px rgba(115, 18, 46, 0.08);
+        background: #000000;
+        z-index: 20;
+        transition:
+          width 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+          height 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+          border-radius 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+          box-shadow 0.38s ease,
+          transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+        cursor: pointer;
+      }
+
+      /* WIDESCREEN CINEMATIC ENLARGED THEATER */
+      .orbital-center-container.enlarged {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: min(1140px, 95vw);
+        height: auto;
+        aspect-ratio: 16 / 9;
+        max-height: 88vh;
+        border-radius: 12px;
+        z-index: 9999;
+        box-shadow:
+          0 35px 90px rgba(0, 0, 0, 0.9),
+          0 0 0 4000px rgba(14, 7, 10, 0.88);
+        border: 2px solid rgba(254, 231, 238, 0.3);
+        cursor: default;
+      }
+
+      .video-backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(14, 7, 10, 0.88);
+        z-index: 9998;
+        display: none;
+        backdrop-filter: blur(4px);
+      }
+
+      .video-backdrop.active {
+        display: block;
+      }
+
+      .orbital-center-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        border-radius: inherit;
+        background: #000000;
+        transition: border-radius 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      /* In circular center mode, allow clicks to pass to container to enlarge */
+      .orbital-center-container:not(.enlarged) .orbital-center-video {
+        pointer-events: none;
+      }
+
+      .center-shrink-btn {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        width: 38px;
+        height: 38px;
+        border-radius: 6px;
+        background: rgba(14, 7, 10, 0.88);
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        color: #ffffff;
+        font-size: 22px;
+        line-height: 1;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 50;
+        transition: all 0.2s ease;
+      }
+
+      .orbital-center-container.enlarged .center-shrink-btn {
+        display: flex;
+      }
+
+      .center-shrink-btn:hover {
+        background: #ffffff;
+        color: var(--brand-deep);
+        transform: scale(1.05);
+      }
+
+      /* Orbiting Smaller Border Video Nodes (Circular) */
+      .orbital-node {
+        position: absolute;
+        width: 8.5%;
+        height: 8.5%;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 2px solid var(--brand-primary);
+        box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+        background: #000000;
+        cursor: pointer;
+        z-index: 15;
+        transition:
+          transform 0.3s ease,
+          border-color 0.2s,
+          box-shadow 0.2s;
+      }
+
+      .orbital-node:hover {
+        transform: scale(1.25);
+        border-color: var(--brand-wine);
+        box-shadow: 0 6px 20px rgba(142, 23, 58, 0.4);
+      }
+
+      .orbital-node img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        border-radius: 50%;
+        pointer-events: none;
+      }
+
+      /* Fly Transport Particle / Clone Animation */
+      .transport-clone {
+        position: absolute;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 3px solid var(--brand-wine);
+        z-index: 50;
+        pointer-events: none;
+        transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      /* Lean Team Strip */
+      .team-strip {
+        background: #ffffff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 20px 24px;
+        margin-top: 36px;
+      }
+
+      .team-strip h4 {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--brand-wine);
+        margin-bottom: 4px;
+      }
+
+      .team-strip p {
+        font-size: 0.88rem;
+        color: var(--text-muted);
+        margin: 0;
+      }
+
+      /* ========================================================= */
+      /* 7. FOOTER                                                 */
+      /* ========================================================= */
+      footer {
+        background: var(--brand-deep);
+        color: rgba(255, 255, 255, 0.75);
+        text-align: center;
+        padding: 2.5rem 5vw;
+      }
+
+      footer .footer-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 0.75rem;
+      }
+
+      footer .footer-logo-circle {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.15);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      footer .footer-logo-circle svg {
+        width: 22px;
+        height: 22px;
+      }
+
+      footer .footer-name {
+        font-family: "Playfair Display", serif;
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: var(--white);
+      }
+
+      footer p {
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.7);
+        margin: 0;
+      }
+
+      footer a {
+        color: var(--brand-soft);
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+
+      /* Lightbox Modal */
+      .lightbox-modal {
+        position: fixed;
+        inset: 0;
+        background: rgba(14, 7, 10, 0.95);
+        z-index: 1000;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+      }
+
+      .lightbox-modal.active {
+        display: flex;
+      }
+
+      .lightbox-wrapper {
+        max-width: 90vw;
+        max-height: 85vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .lightbox-wrapper img {
+        max-width: 90vw;
+        max-height: 80vh;
+        object-fit: contain;
+        border-radius: var(--radius);
+      }
+
+      .lightbox-close-btn {
+        position: absolute;
+        top: 20px;
+        right: 24px;
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: #ffffff;
+        padding: 6px 14px;
+        border-radius: var(--radius);
+        font-size: 0.78rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+
+      .lightbox-close-btn:hover {
+        background: #ffffff;
+        color: var(--brand-deep);
+      }
+
+      @media (max-width: 900px) {
+        .overview-grid {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+        .overview-media-card img {
+          height: 280px;
+        }
+        .focus-grid {
+          grid-template-columns: 1fr;
+        }
+        .hero-banner {
+          padding: 95px 20px 80px;
+          min-height: 420px;
+        }
+        .section-block {
+          padding: 48px 0;
+        }
+        .orbital-wrapper {
+          max-width: 440px;
+        }
+        .focus-card-number {
+          font-size: 2.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="index.html" class="nav-logo">
+        <img src="logo.jpg" alt="Pragya Nepal Logo" class="logo-img" />
+        <span class="nav-wordmark">Pragya Nepal</span>
+      </a>
+      <a href="index.html#projects" class="nav-back">← Back to Projects</a>
+    </nav>
+
+    <section class="hero-banner">
+      <div class="container">
+        <h1>Pink October</h1>
+        <p class="hero-subtitle">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris.
+        </p>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="container">
+        <div class="overview-grid">
+          <div class="overview-content">
+            <div class="section-header" style="margin-bottom: 0">
+              <span class="section-tag">Overview</span>
+              <h2 class="section-title">Breaking Silence Through Education</h2>
+            </div>
+            <p class="overview-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </div>
+
+          <div class="overview-media-wrapper">
+            <div class="overview-offset-border"></div>
+            <div class="overview-media-card">
+              <div class="crosshair-corner crosshair-top-left">+</div>
+              <div class="crosshair-corner crosshair-bottom-right">+</div>
+              <img
+                src="cancer program/WhatsApp Image 2026-10-16 at 7.06.49 PM.jpeg"
+                alt="Pink October Workshop Session"
+                loading="lazy"
+              />
+              <div class="overview-media-meta">
+                <span>Field Outreach // Seminar</span>
+                <span>Kathmandu, Nepal</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block alt-bg" style="padding-bottom: 48px">
+      <div class="container">
+        <div class="section-header" style="margin-bottom: 16px">
+          <span class="section-tag">Photographic Archive</span>
+          <h2 class="section-title">Moments from the Campaign</h2>
+        </div>
+      </div>
+
+      <div class="marquee-outer">
+        <div class="marquee-track" id="marquee-track"></div>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Focus Areas</span>
+          <h2 class="section-title">Core Dimensions of the Outreach</h2>
+        </div>
+
+        <div class="focus-grid">
+          <!-- Card 01 -->
+          <div class="focus-card">
+            <div class="crosshair-corner crosshair-top-left">+</div>
+            <div class="focus-card-number">01</div>
+            <div class="focus-card-body">
+              <h3>Early Detection Literacy</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 02 -->
+          <div class="focus-card">
+            <div class="crosshair-corner crosshair-top-left">+</div>
+            <div class="focus-card-number">02</div>
+            <div class="focus-card-body">
+              <h3>Self-Examination Guide</h3>
+              <p>
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat duis aute irure.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 03 -->
+          <div class="focus-card">
+            <div class="crosshair-corner crosshair-top-left">+</div>
+            <div class="focus-card-number">03</div>
+            <div class="focus-card-body">
+              <h3>Community Support</h3>
+              <p>
+                Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur excepteur sint occaecat.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block alt-bg" id="video-section">
+      <div class="container">
+        <div
+          class="section-header"
+          style="text-align: center; margin-bottom: 24px"
+        >
+          <span class="section-tag">Field Recordings</span>
+          <h2 class="section-title">Videos from the program</h2>
+        </div>
+
+        <div class="orbital-wrapper" id="orbital-arena">
+          <div class="orbital-path"></div>
+
+          <div class="orbital-center-container" id="orbital-center">
+            <button
+              class="center-shrink-btn"
+              id="center-shrink"
+              title="Shrink video"
+            >
+              &times;
+            </button>
+            <video
+              id="center-player"
+              class="orbital-center-video"
+              playsinline
+              muted
+              poster="cancer program/posters/poster_1.jpg"
+            >
+              <source
+                src="cancer program/WhatsApp Video 2026-10-16 at 7.07.08 PM.mp4"
+                type="video/mp4"
+              />
+              Your browser does not support HTML5 video.
+            </video>
+          </div>
+        </div>
+
+        <div class="team-strip">
+          <h4>Program Team</h4>
+          <p>
+            Lorem ipsum dolor sit amet &middot; Consectetur adipiscing elit
+            &middot; Sed do eiusmod tempor
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. FOOTER -->
+    <footer>
+      <div class="footer-logo">
+        <div class="footer-logo-circle">
+          <svg
+            viewBox="0 0 28 28"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="14" cy="12" r="3" fill="rgba(255,255,255,0.9)" />
+            <path
+              d="M14 14 C14 14 7 18 7 22 C9 20 11 19 14 18 C17 19 19 20 21 22 C21 18 14 14 14 14Z"
+              fill="rgba(255,255,255,0.85)"
+            />
+            <path
+              d="M14 10 C14 10 9 5 7 6 C9 7 10 9 14 10Z"
+              fill="rgba(244,186,201,0.9)"
+            />
+            <path
+              d="M14 10 C14 10 19 5 21 6 C19 7 18 9 14 10Z"
+              fill="rgba(244,186,201,0.9)"
+            />
+            <circle cx="8" cy="6" r="1.2" fill="rgba(255,255,255,0.9)" />
+            <circle cx="20" cy="6" r="1.2" fill="rgba(255,255,255,0.9)" />
+          </svg>
+        </div>
+        <span class="footer-name">Pragya Nepal</span>
+      </div>
+      <p>Student-led · Community-powered · Nepal</p>
+      <p style="margin-top: 0.5rem">
+        <a href="mailto:pragya.nepal.official@gmail.com"
+          >pragya.nepal.official@gmail.com</a
+        >
+      </p>
+      <p style="margin-top: 1rem; font-size: 0.75rem; opacity: 0.5">
+        © 2026 Pragya Nepal. All rights reserved.
+      </p>
+    </footer>
+
+    <!-- Video Theater Backdrop -->
+    <div class="video-backdrop" id="video-backdrop"></div>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox-modal" id="lightbox-modal">
+      <button class="lightbox-close-btn" id="lightbox-close">Close</button>
+      <div class="lightbox-wrapper">
+        <img id="lightbox-img" src="" alt="Enlarged photograph" />
+      </div>
+    </div>
+
+    <!-- Vanilla JS -->
+    <script>
+      // 24 Campaign Photos
+      const photoList = [
+        "cancer program/WhatsApp Image 2026-10-16 at 7.06.49 PM.jpeg",
+        "cancer program/WhatsApp Image 2026-10-16 at 7.12.48 PM.jpeg",
+        "cancer program/WhatsApp Image 2026-10-16 at 7.12.49 PM.jpeg",
+        "cancer program/WhatsApp Image 2026-10-16 at 7.12.50 PM.jpeg",
+        "cancer program/WhatsApp Image 2026-10-16 at 7.12.51 PM.jpeg",
+        "cancer program/WhatsApp Image 2026-10-16 at 7.12.52 PM (1).jpeg",
+        "cancer program/WhatsApp Image 2026-10-16 at 7.12.52 PM.jpeg",
+        "cancer program/WhatsApp Image 2026-10-16 at 7.12.53 PM.jpeg",
+        "cancer program/WhatsApp Image 2026-10-16 at 7.12.54 PM.jpeg",
+        "cancer program/WhatsApp Image 2026-10-16 at 7.12.55 PM (1).jpeg",
+        "cancer program/WhatsApp Image 2026-10-16 at 7.12.55 PM.jpeg",
+        "cancer program/WhatsApp Image 2026-10-16 at 7.13.30 PM.jpeg",
+        "cancer program/WhatsApp Image 2026-10-16 at 7.13.31 PM (1).jpeg",
+        "cancer program/WhatsApp Image 2026-10-16 at 7.13.31 PM.jpeg",
+        "cancer program/WhatsApp Image 2026-10-16 at 7.13.32 PM (1).jpeg",
+        "cancer program/WhatsApp Image 2026-10-16 at 7.13.32 PM.jpeg",
+        "cancer program/WhatsApp Image 2026-10-16 at 7.13.41 PM (1).jpeg",
+        "cancer program/WhatsApp Image 2026-10-16 at 7.13.41 PM (2).jpeg",
+        "cancer program/WhatsApp Image 2026-10-16 at 7.13.41 PM.jpeg",
+        "cancer program/WhatsApp Image 2026-10-16 at 7.13.42 PM (1).jpeg",
+        "cancer program/WhatsApp Image 2026-10-16 at 7.13.42 PM (2).jpeg",
+        "cancer program/WhatsApp Image 2026-10-16 at 7.13.42 PM.jpeg",
+        "cancer program/WhatsApp Image 2026-10-16 at 7.13.56 PM (1).jpeg",
+        "cancer program/WhatsApp Image 2026-10-16 at 7.13.56 PM.jpeg",
+      ];
+
+      // 10 Video Clips
+      const videoList = [
+        {
+          src: "cancer program/WhatsApp Video 2026-10-16 at 7.07.08 PM.mp4",
+          poster: "cancer program/posters/poster_1.jpg",
+        },
+        {
+          src: "cancer program/WhatsApp Video 2026-10-16 at 7.07.17 PM.mp4",
+          poster: "cancer program/posters/poster_2.jpg",
+        },
+        {
+          src: "cancer program/WhatsApp Video 2026-10-16 at 7.07.35 PM.mp4",
+          poster: "cancer program/posters/poster_3.jpg",
+        },
+        {
+          src: "cancer program/WhatsApp Video 2026-10-16 at 7.12.47 PM.mp4",
+          poster: "cancer program/posters/poster_4.jpg",
+        },
+        {
+          src: "cancer program/WhatsApp Video 2026-10-16 at 7.13.06 PM.mp4",
+          poster: "cancer program/posters/poster_5.jpg",
+        },
+        {
+          src: "cancer program/WhatsApp Video 2026-10-16 at 7.13.29 PM.mp4",
+          poster: "cancer program/posters/poster_6.jpg",
+        },
+        {
+          src: "cancer program/WhatsApp Video 2026-10-16 at 7.13.36 PM.mp4",
+          poster: "cancer program/posters/poster_7.jpg",
+        },
+        {
+          src: "cancer program/WhatsApp Video 2026-10-16 at 7.13.40 PM.mp4",
+          poster: "cancer program/posters/poster_8.jpg",
+        },
+        {
+          src: "cancer program/WhatsApp Video 2026-10-16 at 7.13.47 PM.mp4",
+          poster: "cancer program/posters/poster_9.jpg",
+        },
+        {
+          src: "cancer program/WhatsApp Video 2026-10-16 at 7.13.55 PM.mp4",
+          poster: "cancer program/posters/poster_10.jpg",
+        },
+      ];
+
+      // ==========================================
+      // 1. MARQUEE CAROUSEL (B&W with simple CSS)
+      // ==========================================
+      const marqueeTrack = document.getElementById("marquee-track");
+      const loopPhotos = [...photoList, ...photoList];
+
+      loopPhotos.forEach((src) => {
+        const card = document.createElement("div");
+        card.className = "marquee-card";
+        card.innerHTML = `<img src="${src}" alt="Campaign Photo" loading="lazy" />`;
+        card.addEventListener("click", () => {
+          openLightbox(src);
+        });
+        marqueeTrack.appendChild(card);
+      });
+
+      // Lightbox Modal
+      const modalEl = document.getElementById("lightbox-modal");
+      const modalImg = document.getElementById("lightbox-img");
+
+      function openLightbox(src) {
+        modalImg.src = src;
+        modalEl.classList.add("active");
+      }
+
+      function closeLightbox() {
+        modalEl.classList.remove("active");
+        modalImg.src = "";
+      }
+
+      document
+        .getElementById("lightbox-close")
+        .addEventListener("click", closeLightbox);
+      modalEl.addEventListener("click", (e) => {
+        if (e.target === modalEl) closeLightbox();
+      });
+
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          closeLightbox();
+          shrinkCenterVideo();
+        }
+      });
+
+      // ==========================================
+      // 2. ORBITAL CIRCULAR VIDEO SYSTEM
+      // ==========================================
+      const arena = document.getElementById("orbital-arena");
+      const centerVideo = document.getElementById("center-player");
+      const centerContainer = document.getElementById("orbital-center");
+      const centerShrinkBtn = document.getElementById("center-shrink");
+
+      let centerIndex = 0;
+      let orbitIndices = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+      let nodeElements = [];
+
+      // Click middle video to enlarge / toggle
+      centerContainer.addEventListener("click", (e) => {
+        if (e.target === centerShrinkBtn) return;
+        if (!centerContainer.classList.contains("enlarged")) {
+          enlargeCenterVideo();
+        }
+      });
+
+      centerShrinkBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        shrinkCenterVideo();
+      });
+
+      const videoBackdrop = document.getElementById("video-backdrop");
+
+      function enlargeCenterVideo() {
+        centerContainer.classList.add("enlarged");
+        if (videoBackdrop) videoBackdrop.classList.add("active");
+        document.body.style.overflow = "hidden";
+
+        // Show controls
+        centerVideo.controls = true;
+
+        // Unmute and continue playing from where it left off
+        centerVideo.muted = false;
+        const playPromise = centerVideo.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(() => {});
+        }
+      }
+
+      function shrinkCenterVideo() {
+        centerContainer.classList.remove("enlarged");
+        if (videoBackdrop) videoBackdrop.classList.remove("active");
+        document.body.style.overflow = "";
+
+        // Hide controls and mute sound in circular centered mode
+        centerVideo.controls = false;
+        centerVideo.muted = true;
+
+        // Continue playing from where it is
+        const playPromise = centerVideo.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(() => {});
+        }
+      }
+
+      if (videoBackdrop) {
+        videoBackdrop.addEventListener("click", shrinkCenterVideo);
+      }
+
+      function renderOrbit() {
+        nodeElements.forEach((n) => n.remove());
+        nodeElements = [];
+
+        const count = orbitIndices.length; // 9
+        const radiusPercent = 43.5; // Orbit radius placing slightly smaller nodes along perimeter
+
+        orbitIndices.forEach((vidIdx, i) => {
+          const vidData = videoList[vidIdx];
+          const angle = i * ((2 * Math.PI) / count) - Math.PI / 2;
+          const xPercent = 50 + radiusPercent * Math.cos(angle);
+          const yPercent = 50 + radiusPercent * Math.sin(angle);
+
+          const node = document.createElement("div");
+          node.className = "orbital-node";
+          node.style.left = `calc(${xPercent}% - 4.25%)`;
+          node.style.top = `calc(${yPercent}% - 4.25%)`;
+          node.title = "Play video";
+          node.innerHTML = `<img src="${vidData.poster}" alt="Video node" />`;
+
+          node.addEventListener("click", (e) => {
+            e.stopPropagation();
+            transportVideoToCenter(vidIdx, node);
+          });
+
+          arena.appendChild(node);
+          nodeElements.push(node);
+        });
+      }
+
+      function transportVideoToCenter(newCenterIdx, clickedNode) {
+        const arenaRect = arena.getBoundingClientRect();
+        const nodeRect = clickedNode.getBoundingClientRect();
+        const centerRect = centerContainer.getBoundingClientRect();
+
+        const clone = document.createElement("div");
+        clone.className = "transport-clone";
+        clone.style.width = `${nodeRect.width}px`;
+        clone.style.height = `${nodeRect.height}px`;
+        clone.style.left = `${nodeRect.left - arenaRect.left}px`;
+        clone.style.top = `${nodeRect.top - arenaRect.top}px`;
+        clone.innerHTML = clickedNode.innerHTML;
+        arena.appendChild(clone);
+
+        requestAnimationFrame(() => {
+          clone.style.left = `${centerRect.left - arenaRect.left}px`;
+          clone.style.top = `${centerRect.top - arenaRect.top}px`;
+          clone.style.width = `${centerRect.width}px`;
+          clone.style.height = `${centerRect.height}px`;
+          clone.style.opacity = "0.9";
+          centerContainer.style.transform = "translate(-50%, -50%) scale(0.94)";
+        });
+
+        const oldCenterIdx = centerIndex;
+        centerIndex = newCenterIdx;
+
+        const clickedPos = orbitIndices.indexOf(newCenterIdx);
+        if (clickedPos !== -1) {
+          orbitIndices[clickedPos] = oldCenterIdx;
+        }
+
+        setTimeout(() => {
+          clone.remove();
+          centerContainer.style.transform = "translate(-50%, -50%) scale(1)";
+
+          const targetVid = videoList[centerIndex];
+          centerVideo.pause();
+          centerVideo.poster = targetVid.poster;
+          centerVideo.src = targetVid.src;
+          centerVideo.load();
+          centerVideo.controls = centerContainer.classList.contains("enlarged");
+          centerVideo.muted = !centerContainer.classList.contains("enlarged");
+          centerVideo.play().catch(() => {});
+
+          renderOrbit();
+        }, 480);
+      }
+
+      // Initialize center video and orbital nodes
+      centerVideo.controls = false;
+      centerVideo.muted = true;
+      centerVideo.poster = videoList[0].poster;
+      centerVideo.src = videoList[0].src;
+      renderOrbit();
+
+      // Autoplay center video once user reaches this section (silent by default)
+      const videoSection = document.getElementById("video-section");
+      let hasAutoplayed = false;
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && !hasAutoplayed) {
+              hasAutoplayed = true;
+              centerVideo.muted = true;
+              centerVideo.controls = false;
+              centerVideo.play().catch(() => {});
+            }
+          });
+        },
+        { threshold: 0.25 },
+      );
+
+      observer.observe(videoSection);
+    </script>
+  </body>
+</html>
