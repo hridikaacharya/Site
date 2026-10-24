@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Parbat — Pragya Nepal</title>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png" />
+  <link rel="manifest" href="favicon_io/site.webmanifest" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --green-deep:   #114343;
+      --green-dark:   #175454;
+      --green-mid:    #2d7a6e;
+      --green-accent: #3ea090;
+      --green-light:  #7fc5c5;
+      --green-tint:   #e8f4f3;
+      --green-soft:   #f0f8f7;
+      --cream:        #fbfdfc;
+      --ink:          #102a2a;
+      --ink-soft:     #466666;
+      --ink-muted:    #6b8585;
+      --white:        #ffffff;
+      --border:       #d8e9e7;
+      --radius:       14px;
+      --radius-sm:    8px;
+      --shadow-sm:    0 2px 8px rgba(17, 67, 67, 0.06);
+      --shadow-md:    0 8px 30px rgba(17, 67, 67, 0.08);
+      --shadow-lg:    0 16px 48px rgba(17, 67, 67, 0.12);
+      --transition:   all 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* --------------------------------------------------------- */
+    /* NAVIGATION                                                */
+    /* --------------------------------------------------------- */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 1.5px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5vw;
+      height: 70px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-img {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+    }
+
+    .nav-wordmark {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--green-deep);
+      letter-spacing: -0.01em;
+    }
+
+    .nav-back {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--ink-soft);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 50px;
+      border: 1px solid transparent;
+      transition: var(--transition);
+    }
+
+    .nav-back:hover {
+      color: var(--green-deep);
+      background: var(--green-tint);
+      border-color: var(--green-light);
+    }
+
+    /* --------------------------------------------------------- */
+    /* HERO SECTION (100VH IMAGE-ONLY SLIDESHOW, NO TEXT)       */
+    /* --------------------------------------------------------- */
+    .hero {
+      position: relative;
+      background: #061717;
+      height: 100vh;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 0;
+    }
+
+    /* Background Slideshow Layers (No Controls, No Alt Text) */
+    .hero-bg-slideshow {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .bg-slide {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 1.2s ease-in-out;
+      background: #061717;
+      overflow: hidden;
+    }
+
+    .bg-slide.active {
+      opacity: 1;
+    }
+
+    /* Ambient background that fills widescreen borders softly */
+    .bg-slide img.slide-ambient {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: blur(40px) brightness(0.42);
+      transform: scale(1.15);
+      z-index: 1;
+      display: block;
+    }
+
+    /* Crystal clear, completely uncropped slide image */
+    .bg-slide img.slide-main {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      max-height: 100vh;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+      filter: drop-shadow(0 10px 40px rgba(0, 0, 0, 0.7));
+    }
+
+    /* --------------------------------------------------------- */
+    /* CONTAINER & TYPOGRAPHY                                    */
+    /* --------------------------------------------------------- */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 5vw;
+    }
+
+    .section-block {
+      padding: 85px 0;
+    }
+
+    .section-label {
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--green-mid);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(2rem, 3.8vw, 2.9rem);
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.2;
+      margin-bottom: 1.1rem;
+      letter-spacing: -0.01em;
+    }
+
+    .section-intro {
+      font-size: 1.05rem;
+      color: var(--ink-soft);
+      max-width: 680px;
+      line-height: 1.7;
+    }
+
+    /* --------------------------------------------------------- */
+    /* STORY & IMPACT OVERVIEW                                   */
+    /* --------------------------------------------------------- */
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 50px;
+      align-items: center;
+      margin-top: 40px;
+    }
+
+    .story-body p {
+      font-size: 1.02rem;
+      color: var(--ink-soft);
+      margin-bottom: 1.25rem;
+    }
+
+    .highlight-card {
+      background: var(--green-soft);
+      border-left: 4px solid var(--green-mid);
+      border-radius: var(--radius);
+      padding: 1.4rem 1.6rem;
+      margin: 1.8rem 0;
+    }
+
+    .highlight-card p {
+      font-size: 0.95rem;
+      color: var(--ink);
+      margin: 0;
+      font-weight: 500;
+      font-style: italic;
+    }
+
+    .stats-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .stat-box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .stat-box:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--green-light);
+    }
+
+    .stat-num {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--green-deep);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-title {
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .stat-desc {
+      font-size: 0.86rem;
+      color: var(--ink-muted);
+      line-height: 1.5;
+    }
+
+    /* --------------------------------------------------------- */
+    /* DEDICATED VIDEO SECTION                                   */
+    /* --------------------------------------------------------- */
+    .video-section {
+      background: #0d2e2e;
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .video-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 20%, rgba(62, 160, 144, 0.15), transparent 70%);
+      pointer-events: none;
+    }
+
+    .video-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 40px;
+    }
+
+    .video-header .section-label {
+      color: var(--green-light);
+    }
+
+    .video-header .section-title {
+      color: var(--white);
+    }
+
+    .video-header .section-intro {
+      color: rgba(255, 255, 255, 0.8);
+      margin: 0 auto;
+    }
+
+    /* Video Player Card */
+    .video-player-card {
+      max-width: 540px;
+      margin: 0 auto;
+      background: #061717;
+      border: 1px solid rgba(127, 197, 197, 0.3);
+      border-radius: 20px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .video-player-container {
+      position: relative;
+      width: 100%;
+      background: #000000;
+      aspect-ratio: 9 / 16;
+      max-height: 680px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .main-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: inherit;
+    }
+
+    .video-footer-meta {
+      padding: 16px 22px;
+      background: #061717;
+      border-top: 1px solid rgba(127, 197, 197, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .video-caption-text {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #e6f5f5;
+    }
+
+    .video-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 50px;
+      background: rgba(62, 160, 144, 0.2);
+      border: 1px solid rgba(62, 160, 144, 0.4);
+      color: var(--green-light);
+    }
+
+    /* --------------------------------------------------------- */
+    /* FOCUS AREAS / THREE PILLARS                               */
+    /* --------------------------------------------------------- */
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .focus-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px 30px;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .focus-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--green-mid);
+    }
+
+    .focus-number {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 3.4rem;
+      font-weight: 700;
+      color: var(--green-light);
+      line-height: 1;
+      margin-bottom: 16px;
+      opacity: 0.85;
+    }
+
+    .focus-card h3 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+
+    .focus-card p {
+      font-size: 0.94rem;
+      color: var(--ink-soft);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    /* --------------------------------------------------------- */
+    /* BOTTOM RETURN STRIP                                       */
+    /* --------------------------------------------------------- */
+    .return-strip {
+      text-align: center;
+      padding: 50px 5vw;
+      background: var(--green-soft);
+      border-top: 1px solid var(--border);
+    }
+
+    .btn-return {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--green-deep);
+      color: var(--white);
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-return:hover {
+      background: var(--green-mid);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* --------------------------------------------------------- */
+    /* FOOTER (MATCHING EXACT SITE FOOTER)                       */
+    /* --------------------------------------------------------- */
+    footer {
+      background: var(--green-deep);
+      color: rgba(255, 255, 255, 0.75);
+      text-align: center;
+      padding: 2.5rem 5vw;
+    }
+
+    footer .footer-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 0.75rem;
+    }
+
+    footer .footer-logo-circle {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    footer .footer-logo-circle svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    footer .footer-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    footer p {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin: 0;
+    }
+
+    footer a {
+      color: var(--green-light);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* --------------------------------------------------------- */
+    /* RESPONSIVE BREAKPOINTS                                    */
+    /* --------------------------------------------------------- */
+    @media (max-width: 900px) {
+      .story-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+      .focus-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .video-player-card {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding: 95px 5vw 85px;
+        min-height: 440px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="logo.jpg" alt="Pragya Nepal Logo" class="logo-img" />
+      <span class="nav-wordmark">Pragya Nepal</span>
+    </a>
+    <a href="index.html#projects" class="nav-back">← Back to Projects</a>
+  </nav>
+
+  <!-- HERO SECTION WITH BACKGROUND SLIDESHOW -->
+  <header class="hero">
+    <!-- AUTOMATED BACKGROUND SLIDESHOW (NO CONTROLS, NO ALT TEXT) -->
+    <div class="hero-bg-slideshow" aria-hidden="true">
+      <div class="bg-slide active">
+        <img class="slide-ambient" src="project%20parbat/Posts/1.png" alt="" />
+        <img class="slide-main" src="project%20parbat/Posts/1.png" alt="" />
+      </div>
+      <div class="bg-slide">
+        <img class="slide-ambient" src="project%20parbat/Posts/2.png" alt="" />
+        <img class="slide-main" src="project%20parbat/Posts/2.png" alt="" />
+      </div>
+      <div class="bg-slide">
+        <img class="slide-ambient" src="project%20parbat/Posts/3.png" alt="" />
+        <img class="slide-main" src="project%20parbat/Posts/3.png" alt="" />
+      </div>
+      <div class="bg-slide">
+        <img class="slide-ambient" src="project%20parbat/Posts/4.png" alt="" />
+        <img class="slide-main" src="project%20parbat/Posts/4.png" alt="" />
+      </div>
+      <div class="bg-slide">
+        <img class="slide-ambient" src="project%20parbat/Posts/5.png" alt="" />
+        <img class="slide-main" src="project%20parbat/Posts/5.png" alt="" />
+      </div>
+    </div>
+  </header>
+
+  <!-- OVERVIEW & STORY SECTION -->
+  <section class="section-block">
+    <div class="container">
+      <p class="section-label">Project Parbat · August 2026</p>
+      <h2 class="section-title">Rooted in Community, Driven by Dialogue</h2>
+      <p class="section-intro">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      </p>
+
+      <div class="story-grid">
+        <div class="story-body">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+          <p>
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+          </p>
+
+          <div class="highlight-card">
+            <p>
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id urna vel tortor interdum sollicitudin sed nec diam."
+            </p>
+          </div>
+
+          <p>
+            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.
+          </p>
+        </div>
+
+        <div class="stats-stack">
+          <div class="stat-box">
+            <div class="stat-num">3</div>
+            <div class="stat-title">Days On The Ground</div>
+            <div class="stat-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.</div>
+          </div>
+
+          <div class="stat-box">
+            <div class="stat-num">3</div>
+            <div class="stat-title">Core Impact Pillars</div>
+            <div class="stat-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.</div>
+          </div>
+
+          <div class="stat-box">
+            <div class="stat-num">100%</div>
+            <div class="stat-title">Youth & Community Led</div>
+            <div class="stat-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEDICATED VIDEO SECTION -->
+  <section class="section-block video-section" id="video">
+    <div class="container">
+      <div class="video-header">
+        <p class="section-label">Field Footage</p>
+        <h2 class="section-title">Moments from Parbat</h2>
+        <p class="section-intro">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </div>
+
+      <div class="video-player-card">
+        <div class="video-player-container">
+          <video
+            id="parbat-video"
+            class="main-video"
+            controls
+            playsinline
+            preload="metadata"
+            poster="project%20parbat/voices-thumbnail.jpg"
+          >
+            <source src="project%20parbat/Posts/Voices.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-footer-meta">
+          <span class="video-caption-text">Project Parbat</span>
+          <span class="video-badge">August 2026</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THREE CORE PILLARS SECTION -->
+  <section class="section-block">
+    <div class="container">
+      <div style="text-align: center; max-width: 680px; margin: 0 auto 12px;">
+        <p class="section-label">Action Pillars</p>
+        <h2 class="section-title">What We Focused On</h2>
+        <p class="section-intro" style="margin: 0 auto;">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.
+        </p>
+      </div>
+
+      <div class="focus-grid">
+        <!-- Pillar 01 -->
+        <div class="focus-card">
+          <div class="focus-number">01</div>
+          <h3>Women's Empowerment</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+          </p>
+        </div>
+
+        <!-- Pillar 02 -->
+        <div class="focus-card">
+          <div class="focus-number">02</div>
+          <h3>Financial Literacy</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id urna vel tortor interdum sollicitudin. Proin feugiat sem nec diam tincidunt.
+          </p>
+        </div>
+
+        <!-- Pillar 03 -->
+        <div class="focus-card">
+          <div class="focus-number">03</div>
+          <h3>Reproductive Health</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RETURN TO PROJECTS STRIP -->
+  <div class="return-strip">
+    <a href="index.html#projects" class="btn-return">
+      ← View All Projects
+    </a>
+  </div>
+
+  <!-- EXACT FOOTER -->
+  <footer>
+    <div class="footer-logo">
+      <div class="footer-logo-circle">
+        <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="14" cy="12" r="3" fill="rgba(255,255,255,0.9)" />
+          <path d="M14 14 C14 14 7 18 7 22 C9 20 11 19 14 18 C17 19 19 20 21 22 C21 18 14 14 14 14Z" fill="rgba(255,255,255,0.85)" />
+          <path d="M14 10 C14 10 9 5 7 6 C9 7 10 9 14 10Z" fill="rgba(127,197,197,0.9)" />
+          <path d="M14 10 C14 10 19 5 21 6 C19 7 18 9 14 10Z" fill="rgba(127,197,197,0.9)" />
+          <circle cx="8" cy="6" r="1.2" fill="rgba(255,255,255,0.9)" />
+          <circle cx="20" cy="6" r="1.2" fill="rgba(255,255,255,0.9)" />
+        </svg>
+      </div>
+      <span class="footer-name">Pragya Nepal</span>
+    </div>
+    <p>Student-led · Community-powered · Nepal</p>
+    <p style="margin-top: 0.5rem">
+      <a href="mailto:pragya.nepal.official@gmail.com">pragya.nepal.official@gmail.com</a>
+    </p>
+    <p style="margin-top: 1rem; font-size: 0.75rem; opacity: 0.5">
+      © 2024 Pragya Nepal. All rights reserved.
+    </p>
+  </footer>
+
+  <!-- AUTOMATED HERO BACKGROUND SLIDESHOW SCRIPT -->
+  <script>
+    (function () {
+      const slides = document.querySelectorAll('.hero-bg-slideshow .bg-slide');
+      if (!slides.length) return;
+
+      let currentIndex = 0;
+      const intervalMs = 4500;
+
+      function cycleSlides() {
+        slides[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + 1) % slides.length;
+        slides[currentIndex].classList.add('active');
+      }
+
+      setInterval(cycleSlides, intervalMs);
+    })();
+  </script>
+</body>
+</html>
