@@ -7,42 +7,41 @@
 <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png" />
+<meta name="description" content="Pragya Nepal is a student-led group running health workshops and camps for girls and women across Nepal." />
 <link rel="manifest" href="favicon_io/site.webmanifest" />
-<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet" />
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --green-deep:#1a7a7a;--green-mid:#2a9494;--green-light:#a0d8d8;--green-tint:#e6f5f5;
-  --cream:#f4fafa;--ink:#1a1a1a;--ink-soft:#444;--white:#fff;--radius:12px;
-  --shadow:0 4px 24px rgba(26,122,122,.1);
+  --green-deep:#2B3484;--green-mid:#12857C;--green-light:#C5CDE6;--green-tint:#F1E7DA;
+  --cream:#FBF6EF;--ink:#1F2437;--ink-soft:#4A5068;--white:#fff;--radius:12px;
+  --shadow:0 4px 24px rgba(43,52,132,.1);
 }
 html{scroll-behavior:smooth}
-body{font-family:"DM Sans",sans-serif;background:var(--cream);color:var(--ink);line-height:1.7;overflow-x:hidden}
+body{font-family:'Source Sans 3',sans-serif;background:var(--cream);color:var(--ink);line-height:1.7;overflow-x:hidden}
 
 /* NAV */
 nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1.5px solid var(--green-light);display:flex;align-items:center;justify-content:space-between;padding:0 5vw;height:70px}
 .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
-.nav-wordmark{font-family:"Helvetica",serif;font-size:1.2rem;font-weight:700;color:var(--green-deep);letter-spacing:.01em}
+.nav-wordmark{font-family:'Source Serif 4',serif;font-size:1.2rem;font-weight:700;color:var(--green-deep);letter-spacing:.01em}
 .nav-links{display:flex;gap:2rem;list-style:none}
 .nav-links a{font-size:.9rem;font-weight:500;color:var(--ink-soft);text-decoration:none;letter-spacing:.03em;transition:color .2s}
 .nav-links a:hover{color:var(--green-deep)}
 
 /* HERO (darker background) */
-.hero{background:linear-gradient(135deg,#1a7a7a 0%,#2a9494 100%);color:var(--white);text-align:center;padding:90px 5vw 80px;position:relative;overflow:hidden}
+.hero{background:#2B3484;color:var(--white);text-align:center;padding:90px 5vw 80px;position:relative;overflow:hidden}
 .hero::before{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='600' height='600' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='300' cy='300' r='280' fill='none' stroke='rgba(255,255,255,0.04)' stroke-width='60'/%3E%3Ccircle cx='300' cy='300' r='160' fill='none' stroke='rgba(255,255,255,0.04)' stroke-width='40'/%3E%3C/svg%3E") center/600px no-repeat}
 .hero-eyebrow{font-size:.78rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--green-light);margin-bottom:1rem;position:relative;z-index:10}
-.hero h1{font-family:"Lora",Georgia,serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:700;line-height:1.15;margin-bottom:1.2rem}
+.hero h1{font-family:'Source Serif 4',Georgia,serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:700;line-height:1.15;margin-bottom:1.2rem}
 .hero p{font-size:1.05rem;max-width:600px;margin:0 auto 2rem;opacity:.9;font-weight:300}
 .hero-cta{display:inline-flex;gap:1rem;flex-wrap:wrap;justify-content:center;position:relative;z-index:10}
-#constellation-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-
-.btn{display:inline-block;padding:.7rem 1.8rem;border-radius:50px;font-size:.9rem;font-weight:600;text-decoration:none;transition:all .2s;cursor:pointer;border:none}
+.btn{display:inline-block;padding:.7rem 1.8rem;border-radius:4px;font-size:.9rem;font-weight:600;text-decoration:none;transition:all .2s;cursor:pointer;border:none}
 .btn-white{background:var(--white);color:var(--green-deep)}
-.btn-white:hover{background:var(--green-light);transform:translateY(-2px)}
+.btn-white:hover{background:var(--green-light);}
 .btn-outline{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.6)}
-.btn-outline:hover{background:rgba(255,255,255,.1);transform:translateY(-2px)}
+.btn-outline:hover{background:rgba(255,255,255,.1);}
 .btn-green{background:var(--green-deep);color:var(--white);align-self:flex-start}
-.btn-green:hover{background:var(--green-mid);transform:translateY(-2px)}
+.btn-green:hover{background:var(--green-mid);}
 
 /* WAVES: each span's background + path fill match the sections above/below */
 .wave-divider{display:block;width:100%;overflow:hidden;line-height:0;margin-top:-1px;margin-bottom:-1px}
@@ -51,19 +50,19 @@ nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1.5p
 
 section{padding:80px 5vw}
 .section-label{font-size:.73rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--green-deep);margin-bottom:.5rem}
-.section-title{font-family:"Lora",Georgia,serif;font-size:clamp(1.9rem,4vw,2.8rem);font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:1.5rem}
-.section-title span{color:#40e0d0}
+.section-title{font-family:'Source Serif 4',Georgia,serif;font-size:clamp(1.9rem,4vw,2.8rem);font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:1.5rem}
+.section-title span{color:inherit}
 
 /* CARDS */
 .projects-header,.involved-header,.gallery-header,.team-header{text-align:center;max-width:600px;margin:0 auto 3rem}
 .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:28px;max-width:1100px;margin:0 auto}
 .project-card{background:var(--white);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:transform .25s,box-shadow .25s;display:flex;flex-direction:column;text-decoration:none;color:inherit}
 .project-card *{text-decoration:none}
-.project-card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(26,122,122,.15)}
+.project-card:hover{box-shadow:0 12px 40px rgba(43,52,132,.15)}
 .project-card-accent{height:6px;background:linear-gradient(90deg,var(--green-deep),var(--green-light))}
 .project-card-body{padding:1.6rem;flex:1}
 .project-meta{font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--green-mid);margin-bottom:.5rem}
-.project-card h3{font-family:"Lora",Georgia,serif;font-size:1.35rem;font-weight:700;color:var(--ink);margin-bottom:.75rem;line-height:1.25}
+.project-card h3{font-family:'Source Serif 4',Georgia,serif;font-size:1.35rem;font-weight:700;color:var(--ink);margin-bottom:.75rem;line-height:1.25}
 .project-card p{font-size:.9rem;color:var(--ink-soft);margin-bottom:1.2rem}
 
 /* Project card images: no gradient bars, image fills the box */
@@ -74,16 +73,16 @@ section{padding:80px 5vw}
 #get-involved{background:var(--white)}
 .involved-grid{align-items:start;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:28px;max-width:1100px;margin:0 auto}
 .involved-card{background:var(--cream);border-radius:var(--radius);padding:2rem}
-.involved-card h3{font-family:"Lora",Georgia,serif;font-size:1.3rem;font-weight:700;color:var(--green-deep);margin-bottom:.75rem}
+.involved-card h3{font-family:'Source Serif 4',Georgia,serif;font-size:1.3rem;font-weight:700;color:var(--green-deep);margin-bottom:.75rem}
 .involved-card p{font-size:.9rem;color:var(--ink-soft);margin-bottom:1rem}
-.involved-card a.external-link{display:inline-block;background:var(--green-deep);color:var(--white);padding:.55rem 1.4rem;border-radius:50px;font-size:.85rem;font-weight:600;text-decoration:none;transition:background .2s,transform .2s;word-break:break-word}
-.involved-card a.external-link:hover{background:var(--green-mid);transform:translateY(-2px)}
+.involved-card a.external-link{display:inline-block;background:var(--green-deep);color:var(--white);padding:.55rem 1.4rem;border-radius:4px;font-size:.85rem;font-weight:600;text-decoration:none;transition:background .2s,transform .2s;word-break:break-word}
+.involved-card a.external-link:hover{background:var(--green-mid);}
 
 /* FORMS */
 .volunteer-form{display:flex;flex-direction:column;gap:.75rem;margin-top:1rem}
 .form-field{display:flex;flex-direction:column;gap:4px}
 .form-field label{font-size:.78rem;font-weight:600;letter-spacing:.05em;color:var(--ink)}
-.form-field input,.form-field textarea{padding:.6rem .9rem;border:1.5px solid var(--green-light);border-radius:8px;font-family:"DM Sans",sans-serif;font-size:.9rem;color:var(--ink);background:var(--white);outline:none;transition:border-color .2s;resize:vertical;width:100%}
+.form-field input,.form-field textarea{padding:.6rem .9rem;border:1.5px solid var(--green-light);border-radius:8px;font-family:'Source Sans 3',sans-serif;font-size:.9rem;color:var(--ink);background:var(--white);outline:none;transition:border-color .2s;resize:vertical;width:100%}
 .form-field input:focus,.form-field textarea:focus{border-color:var(--green-deep)}
 
 /* GALLERY */
@@ -95,9 +94,9 @@ section{padding:80px 5vw}
 .gm-inner{width:100%;height:100%;position:relative;overflow:hidden}
 .gm-inner img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
 .gm-item:hover .gm-inner img{transform:scale(1.08)}
-.gm-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,122,122,.75) 0%,transparent 55%);opacity:0;transition:opacity .3s ease}
+.gm-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(43,52,132,.75) 0%,transparent 55%);opacity:0;transition:opacity .3s ease}
 .gm-item:hover .gm-overlay{opacity:1}
-#lightbox{display:none;position:fixed;inset:0;background:rgba(8,28,28,.93);z-index:1000;align-items:center;justify-content:center;flex-direction:column;gap:16px;backdrop-filter:blur(6px)}
+#lightbox{display:none;position:fixed;inset:0;background:rgba(12,16,51,.94);z-index:1000;align-items:center;justify-content:center;flex-direction:column;gap:16px;backdrop-filter:blur(6px)}
 #lightbox.open{display:flex}
 #lb-img-wrap{max-width:88vw;max-height:76vh;border-radius:12px;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.6)}
 #lb-img{max-width:88vw;max-height:76vh;object-fit:contain;display:block}
@@ -112,16 +111,16 @@ section{padding:80px 5vw}
 #team{background:var(--white)}
 .team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:24px;max-width:1000px;margin:0 auto}
 .team-card{text-align:center;padding:2rem 1rem 1.5rem;background:var(--cream);border-radius:var(--radius);transition:transform .2s}
-.team-card:hover{transform:translateY(-4px)}
+.team-card:hover{}
 .team-avatar{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--green-deep),var(--green-mid));display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;overflow:hidden}
 .team-avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%}
-.team-card h4{font-family:"Lora",Georgia,serif;font-size:1.05rem;font-weight:700;color:var(--ink);margin-bottom:.25rem}
+.team-card h4{font-family:'Source Serif 4',Georgia,serif;font-size:1.05rem;font-weight:700;color:var(--ink);margin-bottom:.25rem}
 .team-card p{font-size:.78rem;color:var(--green-deep);font-weight:500;line-height:1.4}
 
 /* CONTACT */
 #contact{background:var(--green-tint)}
 .contact-wrapper{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
-.contact-info h2{font-family:"Lora",Georgia,serif;font-size:2.2rem;font-weight:700;color:var(--ink);margin-bottom:.5rem}
+.contact-info h2{font-family:'Source Serif 4',Georgia,serif;font-size:2.2rem;font-weight:700;color:var(--ink);margin-bottom:.5rem}
 .contact-info p{color:var(--ink-soft);font-size:.95rem;margin-bottom:2rem}
 .contact-detail{display:flex;align-items:flex-start;gap:12px;margin-bottom:1rem}
 .contact-icon{width:36px;height:36px;border-radius:50%;background:var(--green-deep);display:flex;align-items:center;justify-content:center;flex-shrink:0}
@@ -130,14 +129,14 @@ section{padding:80px 5vw}
 .contact-detail-text strong{display:block;font-weight:600;color:var(--ink);margin-bottom:2px}
 .contact-detail-text a{color:var(--green-deep);text-decoration:none}
 .contact-form{background:var(--white);border-radius:var(--radius);padding:2rem;box-shadow:var(--shadow)}
-.contact-form h3{font-family:"Lora",Georgia,serif;font-size:1.4rem;font-weight:700;color:var(--green-deep);margin-bottom:1.25rem}
+.contact-form h3{font-family:'Source Serif 4',Georgia,serif;font-size:1.4rem;font-weight:700;color:var(--green-deep);margin-bottom:1.25rem}
 
 /* FOOTER */
 footer{background:var(--green-deep);color:rgba(255,255,255,.75);text-align:center;padding:2.5rem 5vw}
 footer .footer-logo{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:.75rem}
 footer .footer-logo-circle{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center}
 footer .footer-logo-circle svg{width:22px;height:22px}
-footer .footer-name{font-family:"Lora",Georgia,serif;font-size:1.1rem;font-weight:700;color:var(--white)}
+footer .footer-name{font-family:'Source Serif 4',Georgia,serif;font-size:1.1rem;font-weight:700;color:var(--white)}
 footer p{font-size:.82rem}
 footer a{color:var(--green-light);text-decoration:none}
 
@@ -153,6 +152,23 @@ footer a{color:var(--green-light);text-decoration:none}
   .wave-divider svg{height:36px}
   .hero-wave{margin-top:-36px}
 }
+footer .footer-logo-circle img{width:100%;height:100%;border-radius:50%;object-fit:cover}
+
+/* hero slideshow */
+.hero{min-height:80vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:110px 5vw 100px;background:#141a4a}
+.hero::before{display:none}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(18,22,64,.74),rgba(18,22,64,.56) 50%,rgba(18,22,64,.8))}
+.hero-slides{position:absolute;inset:0;z-index:0}
+.hero-slides div{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.6s ease}
+.hero-slides div.on{opacity:1}
+.hero-eyebrow,.hero h1,.hero p,.hero-cta{position:relative;z-index:2}
+.hero-eyebrow{color:#E3D9CB}
+.btn-white{background:var(--cream);color:var(--green-deep)}
+.btn-white:hover{background:#fff}
+.btn-outline{border-color:rgba(255,255,255,.7)}
+.btn-outline:hover{background:rgba(255,255,255,.12)}
+.project-card-accent{background:var(--green-deep)}
+.section-title span{color:inherit}
 </style>
 </head>
 <body>
@@ -172,10 +188,10 @@ footer a{color:var(--green-light);text-decoration:none}
 </nav>
 
 <section class="hero">
-  <canvas id="constellation-canvas"></canvas>
+  <div class="hero-slides" aria-hidden="true"><div style="background-image:url(hero/15.jpg)"></div><div style="background-image:url(hero/9.jpg)"></div><div style="background-image:url(hero/13.jpg)"></div><div style="background-image:url(hero/5.jpg)"></div><div style="background-image:url(hero/17.jpg)"></div><div style="background-image:url(hero/11.jpg)"></div><div style="background-image:url(hero/14.jpg)"></div></div>
   <p class="hero-eyebrow">Student-led · Community-powered · Nepal</p>
   <h1>Her Health, Her Future,<br />Our Nation.</h1>
-  <p>Pragya Nepal brings health education, rights awareness, and essential resources to women and girls in underserved communities across Nepal.</p>
+  <p>We are a team of students running health workshops and camps for girls and women in communities across Nepal.</p>
   <div class="hero-cta">
     <a href="#get-involved" class="btn btn-white">Support Our Mission</a>
     <a href="#projects" class="btn btn-outline">Our Projects</a>
@@ -183,10 +199,6 @@ footer a{color:var(--green-light);text-decoration:none}
 </section>
 
 <!-- hero -> about (cream) -->
-<span class="wave-divider hero-wave">
-  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,0 C360,60 1080,60 1440,0 L1440,60 L0,60 Z" fill="#f4fafa" /></svg>
-</span>
-
 <section id="about">
   <div class="projects-header">
     <p class="section-label">Who We Are</p>
@@ -196,32 +208,28 @@ footer a{color:var(--green-light);text-decoration:none}
     <div class="project-card">
       <div class="project-card-accent"></div>
       <div class="project-card-body">
-        <h3>Who We Are</h3>
-        <p>Pragya Nepal is a student-led initiative working to bring health education, rights awareness, and essential resources to women in underserved communities across Nepal. We believe that knowledge is the first step toward change. As young students, we design and direct community level outreach projects to break taboos, distribute health supplies, and empower the next generation of girls.</p>
+        <h3>What We Do</h3>
+        <p>Pragya Nepal is run by students. We plan and lead outreach projects in communities that get very little health information: school workshops, health camps and awareness drives. Where we can, we also hand out health supplies.</p>
       </div>
     </div>
     <div class="project-card">
       <div class="project-card-accent"></div>
       <div class="project-card-body">
-        <h3>Breaking the Silence in Nepal</h3>
-        <p>In many parts of Nepal, critical issues like menstrual hygiene, reproductive rights, and female financial independence are deeply stigmatized or rarely discussed openly. This silence leaves young girls without accurate information, isolates them from resources, and forces many to drop out of school or miss out on higher education.</p>
+        <h3>What Isn't Talked About</h3>
+        <p>In many places in Nepal, periods, reproductive health and money are not things girls can talk about openly. Many grow up without accurate information, and some miss school or leave it because of that.</p>
       </div>
     </div>
     <div class="project-card">
       <div class="project-card-accent"></div>
       <div class="project-card-body">
-        <h3>Why What We Do Is So Important</h3>
-        <p>We believe you cannot empower a community without first giving its girls control over their health and their futures. Because we are students ourselves, we can speak directly to our peers and break through old taboos. Nepal is developing rapidly, but it cannot reach its full potential while half its population faces barriers to health, education, and resources. We start with basic health literacy and expand into financial independence, academic development, and technical skills, building a model for grassroots outreach led entirely by young Nepalis. We aren’t just running workshops. We’re making sure the girls who will shape Nepal’s future have the tools and the confidence to build it.</p>
+        <h3>Why Students</h3>
+        <p>We are students too, so we can talk to girls our own age in a way adults often can't. We start with basic health education, then move on to money skills, studying and technical skills. We want to show that young Nepalis can run this kind of outreach themselves.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- about (cream) -> projects (tint) -->
-<span class="wave-divider" style="background:#f4fafa">
-  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,60 C360,0 1080,0 1440,60 L1440,60 L0,60 Z" fill="#e6f5f5" /></svg>
-</span>
-
 <section id="projects">
   <div class="projects-header">
     <p class="section-label">What We've Done</p>
@@ -259,7 +267,7 @@ footer a{color:var(--green-light);text-decoration:none}
     <a href="project-parbat.html" class="project-card">
       <div class="card-img"><img src="project%20parbat/Posts/1.png" alt="Project Parbat" /></div>
       <div class="project-card-body">
-        <p class="project-meta">Parbat District · August 2026</p>
+        <p class="project-meta">Karkineta, Parbat · July 2026</p>
         <h3>Project Parbat</h3>
       </div>
     </a>
@@ -267,20 +275,29 @@ footer a{color:var(--green-light);text-decoration:none}
 </section>
 
 <!-- projects (tint) -> get involved (white) -->
-<span class="wave-divider" style="background:#e6f5f5">
-  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,0 C360,60 1080,60 1440,0 L1440,60 L0,60 Z" fill="#ffffff" /></svg>
-</span>
+<section id="watch" style="background:var(--cream)">
+  <div class="projects-header">
+    <p class="section-label">Video</p>
+    <h2 class="section-title">Project Parbat Documentary</h2>
+    <p style="color:var(--ink-soft);font-size:.95rem">A film from our three days in Karkineta, Parbat.</p>
+  </div>
+  <div style="max-width:900px;margin:0 auto">
+    <video controls playsinline preload="metadata" poster="project%20parbat/final-thumbnail.jpg" style="width:100%;display:block;border-radius:6px;background:#000;aspect-ratio:16/9">
+      <source src="project%20parbat/Posts/Final.mp4" type="video/mp4" />
+    </video>
+  </div>
+</section>
 
 <section id="get-involved">
   <div class="involved-header">
-    <p class="section-label">Take Action</p>
+    <p class="section-label">Get Involved</p>
     <h2 class="section-title"><span>Support Our Mission</span></h2>
-    <p style="color:var(--ink-soft);font-size:.95rem">Whether you choose to invest financially, join us on the ground, or build a partnership, your involvement directly empowers young girls and underserved communities across Nepal.</p>
+    <p style="color:var(--ink-soft);font-size:.95rem">There are two ways to get involved: volunteer with the team, or work with us as an organisation.</p>
   </div>
   <div class="involved-grid">
     <div class="involved-card">
       <h3>Volunteer With Us</h3>
-      <p>We are always looking for passionate young students, researchers, and creators to join our core team or help facilitate our localized outreach projects and upcoming workshops. Fill out the form to get started.</p>
+      <p>We are looking for students, researchers and creators to join the core team or help run workshops and outreach. Fill in the form to get started.</p>
       <form class="volunteer-form" id="volunteer-form" action="https://formspree.io/f/xykanlal" method="POST">
         <div class="form-field"><label for="vol-name">Name</label><input type="text" id="vol-name" name="name" placeholder="Your full name" /></div>
         <div class="form-field"><label for="vol-email">Email</label><input type="email" id="vol-email" name="email" placeholder="you@example.com" /></div>
@@ -291,23 +308,18 @@ footer a{color:var(--green-light);text-decoration:none}
     </div>
     <div class="involved-card">
       <h3>Collaborate / Partner With Us</h3>
-      <p>We believe in the power of collective impact. If you represent an NGO, a student group, a healthcare organization, or a corporate sponsor looking to co-design initiatives, share resources, or provide mentorship, we would love to connect.</p>
-      <p>Reach out to us directly to explore how we can work together:</p>
+      <p>If you are an NGO, student group, health organisation or company and want to run something together, share resources or mentor us, email us:</p>
       <a href="mailto:pragya.nepal.official@gmail.com" class="external-link">pragya.nepal.official@gmail.com →</a>
     </div>
   </div>
 </section>
 
 <!-- get involved (white) -> gallery (tint) -->
-<span class="wave-divider" style="background:var(--white)">
-  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,60 C360,0 1080,0 1440,60 L1440,60 L0,60 Z" fill="#e6f5f5" /></svg>
-</span>
-
 <section id="gallery">
   <div class="gallery-header">
-    <p class="section-label">In the Field</p>
+    <p class="section-label">Photos</p>
     <h2 class="section-title">Our <span>Gallery</span></h2>
-    <p style="color:var(--ink-soft);font-size:.92rem;margin-top:.5rem">Click any photo to view it full screen</p>
+    <p style="color:var(--ink-soft);font-size:.92rem;margin-top:.5rem">Click a photo to enlarge it</p>
   </div>
 
   <div class="gallery-mosaic">
@@ -350,13 +362,9 @@ footer a{color:var(--green-light);text-decoration:none}
 </section>
 
 <!-- gallery (tint) -> team (white) -->
-<span class="wave-divider" style="background:#e6f5f5">
-  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,0 C360,60 1080,60 1440,0 L1440,60 L0,60 Z" fill="#ffffff" /></svg>
-</span>
-
 <section id="team">
   <div class="team-header">
-    <p class="section-label">The People Behind It</p>
+    <p class="section-label">Team</p>
     <h2 class="section-title"><span>Meet Our Team</span></h2>
   </div>
   <div class="team-grid">
@@ -373,16 +381,12 @@ footer a{color:var(--green-light);text-decoration:none}
 </section>
 
 <!-- team (white) -> contact (tint) -->
-<span class="wave-divider" style="background:var(--white)">
-  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,60 C360,0 1080,0 1440,60 L1440,60 L0,60 Z" fill="#e6f5f5" /></svg>
-</span>
-
 <section id="contact">
   <div class="contact-wrapper">
     <div class="contact-info">
-      <p class="section-label">Reach Out</p>
+      <p class="section-label">Contact</p>
       <h2>Get In Touch</h2>
-      <p>Have questions about Pragya Nepal or want to be involved? We'd love to hear from you and help you join our movement.</p>
+      <p>Questions, or want to get involved? Write to us or call.</p>
       <div class="contact-detail">
         <div class="contact-icon">
           <svg viewBox="0 0 16 16" fill="none" stroke="white" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg"><path d="M2 3h12v10H2z" /><path d="M2 3l6 6 6-6" /></svg>
@@ -417,16 +421,7 @@ footer a{color:var(--green-light);text-decoration:none}
 
 <footer>
   <div class="footer-logo">
-    <div class="footer-logo-circle">
-      <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="14" cy="12" r="3" fill="rgba(255,255,255,0.9)" />
-        <path d="M14 14 C14 14 7 18 7 22 C9 20 11 19 14 18 C17 19 19 20 21 22 C21 18 14 14 14 14Z" fill="rgba(255,255,255,0.85)" />
-        <path d="M14 10 C14 10 9 5 7 6 C9 7 10 9 14 10Z" fill="rgba(168,213,186,0.9)" />
-        <path d="M14 10 C14 10 19 5 21 6 C19 7 18 9 14 10Z" fill="rgba(168,213,186,0.9)" />
-        <circle cx="8" cy="6" r="1.2" fill="rgba(255,255,255,0.9)" />
-        <circle cx="20" cy="6" r="1.2" fill="rgba(255,255,255,0.9)" />
-      </svg>
-    </div>
+    <div class="footer-logo-circle"><img src="logo.jpg" alt="" /></div>
     <span class="footer-name">Pragya Nepal</span>
   </div>
   <p>Student-led · Community-powered · Nepal</p>
@@ -463,71 +458,9 @@ document.addEventListener("keydown", function (e) {
 </script>
 
 <script>
-(function () {
-  const canvas = document.getElementById("constellation-canvas");
-  const ctx = canvas.getContext("2d");
-  const CONSTELLATIONS = [
-    { name: "Orion", color: "rgba(180, 220, 255, VAL)",
-      stars: [{x:.52,y:.18,r:2.8},{x:.62,y:.2,r:2.2},{x:.67,y:.28,r:1.8},{x:.65,y:.38,r:3.2},{x:.55,y:.42,r:1.6},{x:.5,y:.3,r:1.4},{x:.53,y:.3,r:1.4},{x:.56,y:.3,r:1.4},{x:.44,y:.38,r:2},{x:.6,y:.14,r:1.5},{x:.63,y:.1,r:1.3}],
-      lines: [[0,1],[1,2],[2,3],[3,4],[4,8],[0,8],[5,6],[6,7],[0,5],[1,9],[9,10]] },
-    { name: "Cassiopeia", color: "rgba(200, 180, 255, VAL)",
-      stars: [{x:.1,y:.08,r:2},{x:.17,y:.05,r:2.4},{x:.23,y:.09,r:1.8},{x:.29,y:.06,r:2},{x:.36,y:.1,r:1.6}],
-      lines: [[0,1],[1,2],[2,3],[3,4]] },
-    { name: "Ursa Major", color: "rgba(180, 255, 220, VAL)",
-      stars: [{x:.05,y:.35,r:2.2},{x:.1,y:.4,r:2},{x:.14,y:.5,r:1.8},{x:.09,y:.56,r:1.8},{x:.16,y:.62,r:1.6},{x:.24,y:.6,r:1.8},{x:.3,y:.53,r:2}],
-      lines: [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6]] },
-    { name: "Scorpius", color: "rgba(255, 200, 160, VAL)",
-      stars: [{x:.72,y:.15,r:3},{x:.7,y:.22,r:1.6},{x:.68,y:.3,r:1.8},{x:.72,y:.38,r:1.5},{x:.76,y:.44,r:1.5},{x:.8,y:.48,r:1.6},{x:.85,y:.44,r:1.4},{x:.89,y:.4,r:1.4},{x:.64,y:.1,r:1.5},{x:.67,y:.08,r:1.5},{x:.74,y:.08,r:1.6}],
-      lines: [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[8,9],[9,10],[10,0]] },
-    { name: "Cygnus", color: "rgba(220, 240, 255, VAL)",
-      stars: [{x:.38,y:.15,r:2.8},{x:.38,y:.26,r:1.5},{x:.38,y:.36,r:1.8},{x:.38,y:.46,r:1.5},{x:.38,y:.55,r:2.2},{x:.28,y:.36,r:1.4},{x:.2,y:.36,r:1.3},{x:.48,y:.36,r:1.4},{x:.57,y:.36,r:1.3}],
-      lines: [[0,1],[1,2],[2,3],[3,4],[5,2],[2,7],[6,5],[7,8]] },
-    { name: "Eridanus", color: "rgba(255, 220, 200, VAL)",
-      stars: [{x:.82,y:.12,r:1.4},{x:.86,y:.18,r:1.3},{x:.9,y:.25,r:1.4},{x:.88,y:.33,r:1.3},{x:.84,y:.4,r:1.5},{x:.88,y:.55,r:1.3},{x:.92,y:.62,r:1.4},{x:.87,y:.7,r:1.3},{x:.8,y:.74,r:2.2}],
-      lines: [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,8]] },
-  ];
-
-  let W, H, driftX = 0, driftY = 0, tick = 0;
-
-  function resize() {
-    W = canvas.width = canvas.offsetWidth;
-    H = canvas.height = canvas.offsetHeight;
-  }
-  function drawStar(x, y, r, alpha, color) {
-    const grd = ctx.createRadialGradient(x, y, 0, x, y, r * 3);
-    grd.addColorStop(0, color.replace("VAL", String(alpha)));
-    grd.addColorStop(0.4, color.replace("VAL", String(alpha * 0.6)));
-    grd.addColorStop(1, color.replace("VAL", "0"));
-    ctx.beginPath(); ctx.arc(x, y, r * 3, 0, Math.PI * 2); ctx.fillStyle = grd; ctx.fill();
-    ctx.beginPath(); ctx.arc(x, y, r * 0.7, 0, Math.PI * 2);
-    ctx.fillStyle = color.replace("VAL", String(Math.min(1, alpha * 1.4))); ctx.fill();
-  }
-  function drawLine(x1, y1, x2, y2, alpha, color) {
-    ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2);
-    ctx.strokeStyle = color.replace("VAL", String(alpha * 0.35));
-    ctx.lineWidth = 0.8; ctx.stroke();
-  }
-  function twinkle(base, t, seed) { return base + Math.sin(t * 0.7 + seed * 137.5) * 0.18; }
-
-  function draw() {
-    ctx.clearRect(0, 0, W, H);
-    tick += 0.005;
-    driftX = Math.sin(tick * 0.0523) * W * 0.38;
-    driftY = ((tick * 0.012) % (H * 0.15)) - H * 0.05;
-    CONSTELLATIONS.forEach((con, ci) => {
-      const px = con.stars.map((s, si) => ({
-        x: s.x * W + driftX + Math.sin(tick * 0.15 + si * 2.1 + ci) * 1.5,
-        y: s.y * H + driftY + Math.cos(tick * 0.12 + si * 1.7 + ci) * 1.2,
-      }));
-      con.lines.forEach(([a, b]) => drawLine(px[a].x, px[a].y, px[b].x, px[b].y, 0.7, con.color));
-      con.stars.forEach((s, si) => drawStar(px[si].x, px[si].y, s.r, twinkle(0.75, tick, si + ci * 11), con.color));
-    });
-    requestAnimationFrame(draw);
-  }
-  window.addEventListener("resize", resize);
-  resize();
-  draw();
-})();
+(function(){var s=document.querySelectorAll('.hero-slides div');if(!s.length)return;var i=0;s[0].classList.add('on');
+if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+setInterval(function(){s[i].classList.remove('on');i=(i+1)%s.length;s[i].classList.add('on');},6000);})();
 </script>
 
 <script>

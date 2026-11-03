@@ -12,7 +12,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet" />
 
   <style>
     *, *::before, *::after {
@@ -22,19 +22,19 @@
     }
 
     :root {
-      --green-deep:   #114343;
-      --green-dark:   #175454;
-      --green-mid:    #2d7a6e;
-      --green-accent: #3ea090;
-      --green-light:  #7fc5c5;
-      --green-tint:   #e8f4f3;
-      --green-soft:   #f0f8f7;
-      --cream:        #fbfdfc;
-      --ink:          #102a2a;
-      --ink-soft:     #466666;
-      --ink-muted:    #6b8585;
+      --green-deep:#2B3484;
+      --green-dark:#232B6E;
+      --green-mid:#12857C;
+      --green-accent:#1B9A8F;
+      --green-light:#C5CDE6;
+      --green-tint:#F1E7DA;
+      --green-soft:#F6EEE3;
+      --cream:#FBF6EF;
+      --ink:#1F2437;
+      --ink-soft:#4A5068;
+      --ink-muted:#6B7189;
       --white:        #ffffff;
-      --border:       #d8e9e7;
+      --border:#E3D9CB;
       --radius:       14px;
       --radius-sm:    8px;
       --shadow-sm:    0 2px 8px rgba(17, 67, 67, 0.06);
@@ -48,7 +48,7 @@
     }
 
     body {
-      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Source Sans 3', sans-serif;
       background: var(--cream);
       color: var(--ink);
       line-height: 1.7;
@@ -88,7 +88,7 @@
     }
 
     .nav-wordmark {
-      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-family: ''Source Serif 4',Georgia,serif;
       font-size: 1.45rem;
       font-weight: 700;
       color: var(--green-deep);
@@ -104,7 +104,7 @@
       align-items: center;
       gap: 6px;
       padding: 8px 14px;
-      border-radius: 50px;
+      border-radius:4px;
       border: 1px solid transparent;
       transition: var(--transition);
     }
@@ -120,7 +120,7 @@
     /* --------------------------------------------------------- */
     .hero {
       position: relative;
-      background: #061717;
+      background: #0c1033;
       height: 100vh;
       min-height: 100vh;
       display: flex;
@@ -151,7 +151,7 @@
       align-items: center;
       justify-content: center;
       transition: opacity 1.2s ease-in-out;
-      background: #061717;
+      background: #0c1033;
       overflow: hidden;
     }
 
@@ -209,7 +209,7 @@
     }
 
     .section-title {
-      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-family: ''Source Serif 4',Georgia,serif;
       font-size: clamp(2rem, 3.8vw, 2.9rem);
       font-weight: 700;
       color: var(--ink);
@@ -274,13 +274,13 @@
     }
 
     .stat-box:hover {
-      transform: translateY(-3px);
+      
       box-shadow: var(--shadow-md);
       border-color: var(--green-light);
     }
 
     .stat-num {
-      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-family: ''Source Serif 4',Georgia,serif;
       font-size: 2.8rem;
       font-weight: 700;
       color: var(--green-deep);
@@ -305,7 +305,7 @@
     /* DEDICATED VIDEO SECTION                                   */
     /* --------------------------------------------------------- */
     .video-section {
-      background: #0d2e2e;
+      background: #141a4a;
       color: var(--white);
       position: relative;
       overflow: hidden;
@@ -342,7 +342,7 @@
     .video-player-card {
       max-width: 540px;
       margin: 0 auto;
-      background: #061717;
+      background: #0c1033;
       border: 1px solid rgba(127, 197, 197, 0.3);
       border-radius: 20px;
       box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
@@ -371,7 +371,7 @@
 
     .video-footer-meta {
       padding: 16px 22px;
-      background: #061717;
+      background: #0c1033;
       border-top: 1px solid rgba(127, 197, 197, 0.15);
       display: flex;
       align-items: center;
@@ -390,7 +390,7 @@
       letter-spacing: 0.14em;
       text-transform: uppercase;
       padding: 4px 10px;
-      border-radius: 50px;
+      border-radius:4px;
       background: rgba(62, 160, 144, 0.2);
       border: 1px solid rgba(62, 160, 144, 0.4);
       color: var(--green-light);
@@ -419,13 +419,13 @@
     }
 
     .focus-card:hover {
-      transform: translateY(-5px);
+      
       box-shadow: var(--shadow-md);
       border-color: var(--green-mid);
     }
 
     .focus-number {
-      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-family: ''Source Serif 4',Georgia,serif;
       font-size: 3.4rem;
       font-weight: 700;
       color: var(--green-light);
@@ -435,7 +435,7 @@
     }
 
     .focus-card h3 {
-      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-family: ''Source Serif 4',Georgia,serif;
       font-size: 1.55rem;
       font-weight: 700;
       color: var(--ink);
@@ -467,7 +467,7 @@
       background: var(--green-deep);
       color: var(--white);
       padding: 12px 28px;
-      border-radius: 50px;
+      border-radius:4px;
       font-size: 0.92rem;
       font-weight: 600;
       text-decoration: none;
@@ -477,7 +477,7 @@
 
     .btn-return:hover {
       background: var(--green-mid);
-      transform: translateY(-2px);
+      
       box-shadow: var(--shadow-md);
     }
 
@@ -515,7 +515,7 @@
     }
 
     footer .footer-name {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: ''Source Serif 4',Georgia,serif;
       font-size: 1.25rem;
       font-weight: 700;
       color: var(--white);
@@ -559,7 +559,17 @@
         min-height: 440px;
       }
     }
-  </style>
+  footer .footer-logo-circle img{width:100%;height:100%;border-radius:50%;object-fit:cover}
+
+.video-section .video-header{margin-bottom:40px}
+.video-player-card{margin-bottom:36px}
+.video-player-card.wide-card{max-width:900px}
+.video-player-container.wide{aspect-ratio:16/9;max-height:none}
+.team-block{background:var(--green-soft);padding:60px 0;border-top:1px solid var(--border)}
+.credit-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:28px;margin-top:18px}
+.credit-grid h4{font-size:.76rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green-mid);margin-bottom:6px}
+.credit-grid p{font-size:.95rem;color:var(--ink);line-height:1.6}
+</style>
 </head>
 <body>
 
@@ -599,129 +609,81 @@
     </div>
   </header>
 
-  <!-- OVERVIEW & STORY SECTION -->
+  <!-- OVERVIEW -->
   <section class="section-block">
     <div class="container">
-      <p class="section-label">Project Parbat · August 2026</p>
-      <h2 class="section-title">Rooted in Community, Driven by Dialogue</h2>
-      <p class="section-intro">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
-      </p>
+      <p class="section-label">Karkineta, Parbat · July 2026</p>
+      <h2 class="section-title">Three Days in Karkineta</h2>
+      <p class="section-intro">On July 27 we travelled from Kathmandu to Karkineta, Parbat, and spent three days with the community.</p>
 
       <div class="story-grid">
         <div class="story-body">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          </p>
-          <p>
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
-          </p>
-
+          <p>We spent the visit on three topics: women's empowerment, financial literacy and reproductive health awareness.</p>
+          <p>We came back with new connections, honest conversations and a stronger commitment to giving back.</p>
           <div class="highlight-card">
-            <p>
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id urna vel tortor interdum sollicitudin sed nec diam."
-            </p>
+            <p>"Project Parbat was an opportunity to share knowledge, learn from the community, and take a small step towards positive change."</p>
           </div>
-
-          <p>
-            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.
-          </p>
         </div>
-
         <div class="stats-stack">
-          <div class="stat-box">
-            <div class="stat-num">3</div>
-            <div class="stat-title">Days On The Ground</div>
-            <div class="stat-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.</div>
-          </div>
-
-          <div class="stat-box">
-            <div class="stat-num">3</div>
-            <div class="stat-title">Core Impact Pillars</div>
-            <div class="stat-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.</div>
-          </div>
-
-          <div class="stat-box">
-            <div class="stat-num">100%</div>
-            <div class="stat-title">Youth & Community Led</div>
-            <div class="stat-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.</div>
-          </div>
+          <div class="stat-box"><div class="stat-num">3</div><div class="stat-title">Days in Karkineta</div></div>
+          <div class="stat-box"><div class="stat-num">3</div><div class="stat-title">Topics covered</div></div>
+          <div class="stat-box"><div class="stat-num">Jul 27</div><div class="stat-title">Day we left Kathmandu</div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- DEDICATED VIDEO SECTION -->
+  <!-- VIDEOS -->
   <section class="section-block video-section" id="video">
     <div class="container">
       <div class="video-header">
-        <p class="section-label">Field Footage</p>
-        <h2 class="section-title">Moments from Parbat</h2>
-        <p class="section-intro">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
+        <p class="section-label">Videos</p>
+        <h2 class="section-title">From the Trip</h2>
       </div>
-
-      <div class="video-player-card">
-        <div class="video-player-container">
-          <video
-            id="parbat-video"
-            class="main-video"
-            controls
-            playsinline
-            preload="metadata"
-            poster="project%20parbat/voices-thumbnail.jpg"
-          >
-            <source src="project%20parbat/Posts/Voices.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
+      <div class="video-player-card wide-card">
+        <div class="video-player-container wide">
+          <video class="main-video" controls playsinline preload="metadata" poster="project%20parbat/final-thumbnail.jpg">
+            <source src="project%20parbat/Posts/Final.mp4" type="video/mp4" />
           </video>
         </div>
-        <div class="video-footer-meta">
-          <span class="video-caption-text">Project Parbat</span>
-          <span class="video-badge">August 2026</span>
+        <div class="video-footer-meta"><span class="video-caption-text">Project Parbat documentary</span><span class="video-badge">July 2026</span></div>
+      </div>
+      <div class="video-player-card">
+        <div class="video-player-container">
+          <video id="parbat-video" class="main-video" controls playsinline preload="metadata" poster="project%20parbat/voices-thumbnail.jpg">
+            <source src="project%20parbat/Posts/Voices.mp4" type="video/mp4" />
+          </video>
         </div>
+        <div class="video-footer-meta"><span class="video-caption-text">Voices</span><span class="video-badge">July 2026</span></div>
       </div>
     </div>
   </section>
 
-  <!-- THREE CORE PILLARS SECTION -->
+  <!-- TOPICS -->
   <section class="section-block">
     <div class="container">
-      <div style="text-align: center; max-width: 680px; margin: 0 auto 12px;">
-        <p class="section-label">Action Pillars</p>
-        <h2 class="section-title">What We Focused On</h2>
-        <p class="section-intro" style="margin: 0 auto;">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.
-        </p>
+      <div style="text-align:center;max-width:680px;margin:0 auto 12px;">
+        <p class="section-label">What We Covered</p>
+        <h2 class="section-title">Three Topics</h2>
       </div>
-
       <div class="focus-grid">
-        <!-- Pillar 01 -->
-        <div class="focus-card">
-          <div class="focus-number">01</div>
-          <h3>Women's Empowerment</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-          </p>
-        </div>
+        <div class="focus-card"><div class="focus-number">01</div><h3>Women's Empowerment</h3><p>We encouraged women to learn, share their experiences and make informed decisions about their future.</p></div>
+        <div class="focus-card"><div class="focus-number">02</div><h3>Financial Literacy</h3><p>We talked through why financial awareness matters and how it helps people make better-informed decisions.</p></div>
+        <div class="focus-card"><div class="focus-number">03</div><h3>Reproductive Health</h3><p>We shared information about reproductive health and encouraged open conversation without stigma or hesitation.</p></div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Pillar 02 -->
-        <div class="focus-card">
-          <div class="focus-number">02</div>
-          <h3>Financial Literacy</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id urna vel tortor interdum sollicitudin. Proin feugiat sem nec diam tincidunt.
-          </p>
-        </div>
-
-        <!-- Pillar 03 -->
-        <div class="focus-card">
-          <div class="focus-number">03</div>
-          <h3>Reproductive Health</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.
-          </p>
-        </div>
+  <!-- TEAM -->
+  <section class="section-block team-block">
+    <div class="container">
+      <p class="section-label">Project Team</p>
+      <div class="credit-grid">
+        <div><h4>Program Director</h4><p>Hridika Acharya</p></div>
+        <div><h4>Program Facilitators</h4><p>Dipasana Regmi<br />Shovna Paudyal<br />Sanskriti Khadka</p></div>
+        <div><h4>Social Media</h4><p>Natalie Ghimire</p></div>
+        <div><h4>Documentation</h4><p>Wotshal Malla</p></div>
+        <div><h4>IT</h4><p>Sushank Dhungana<br />Prasun Adhikari</p></div>
       </div>
     </div>
   </section>
@@ -736,16 +698,7 @@
   <!-- EXACT FOOTER -->
   <footer>
     <div class="footer-logo">
-      <div class="footer-logo-circle">
-        <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="14" cy="12" r="3" fill="rgba(255,255,255,0.9)" />
-          <path d="M14 14 C14 14 7 18 7 22 C9 20 11 19 14 18 C17 19 19 20 21 22 C21 18 14 14 14 14Z" fill="rgba(255,255,255,0.85)" />
-          <path d="M14 10 C14 10 9 5 7 6 C9 7 10 9 14 10Z" fill="rgba(127,197,197,0.9)" />
-          <path d="M14 10 C14 10 19 5 21 6 C19 7 18 9 14 10Z" fill="rgba(127,197,197,0.9)" />
-          <circle cx="8" cy="6" r="1.2" fill="rgba(255,255,255,0.9)" />
-          <circle cx="20" cy="6" r="1.2" fill="rgba(255,255,255,0.9)" />
-        </svg>
-      </div>
+      <div class="footer-logo-circle"><img src="logo.jpg" alt="" /></div>
       <span class="footer-name">Pragya Nepal</span>
     </div>
     <p>Student-led · Community-powered · Nepal</p>
@@ -753,7 +706,7 @@
       <a href="mailto:pragya.nepal.official@gmail.com">pragya.nepal.official@gmail.com</a>
     </p>
     <p style="margin-top: 1rem; font-size: 0.75rem; opacity: 0.5">
-      © 2024 Pragya Nepal. All rights reserved.
+      © 2026 Pragya Nepal. All rights reserved.
     </p>
   </footer>
 

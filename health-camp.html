@@ -4,25 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Free Community Health Checkup Camp — Pragya Nepal</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --green-deep:  #145A5A;
-      --green-mid:   #3A8A5C;
-      --green-light: #7FC5C5;
-      --green-tint:  #E6F5F5;
-      --cream:       #F4FAFA;
-      --ink:         #102A2A;
-      --ink-soft:    #466666;
+      --green-deep:#2B3484;
+      --green-mid:#12857C;
+      --green-light:#C5CDE6;
+      --green-tint:#F1E7DA;
+      --cream:#FBF6EF;
+      --ink:#1F2437;
+      --ink-soft:#4A5068;
       --white:       #ffffff;
       --radius:      12px;
-      --shadow:      0 4px 24px rgba(44,110,73,0.10);
+      --shadow:      0 4px 24px rgba(43,52,132,0.10);
     }
 
     html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); line-height: 1.7; }
+    body { font-family: 'Source Sans 3', sans-serif; background: var(--cream); color: var(--ink); line-height: 1.7; }
 
     nav {
       position: sticky; top: 0; z-index: 100;
@@ -44,7 +44,7 @@
     .logo-circle svg { width: 28px; height: 28px; }
 
     .nav-wordmark {
-      font-family: 'Cormorant Garant', serif;
+      font-family: ''Source Serif 4',Georgia,serif;
       font-size: 1.35rem; font-weight: 700;
       color: var(--green-deep);
     }
@@ -59,18 +59,12 @@
     .nav-back:hover { color: var(--green-deep); }
 
     .hero {
-      background: linear-gradient(135deg, var(--green-deep) 0%, var(--green-mid) 100%);
+      background:#2B3484;
       color: var(--white);
       text-align: center;
       padding: 80px 5vw 70px;
       position: relative;
       overflow: hidden;
-    }
-
-    #particle-canvas {
-      position: absolute; inset: 0;
-      width: 100%; height: 100%;
-      pointer-events: none;
     }
 
     .hero-eyebrow {
@@ -81,7 +75,7 @@
     }
 
     .hero h1 {
-      font-family: 'Cormorant Garant', serif;
+      font-family: ''Source Serif 4',Georgia,serif;
       font-size: clamp(2rem, 5vw, 3.4rem);
       font-weight: 700; line-height: 1.15;
       margin-bottom: 0.75rem;
@@ -105,7 +99,7 @@
     }
 
     .content h2 {
-      font-family: 'Cormorant Garant', serif;
+      font-family: ''Source Serif 4',Georgia,serif;
       font-size: clamp(1.6rem, 3vw, 2.2rem);
       font-weight: 700; color: var(--ink);
       margin-bottom: 1rem; line-height: 1.25;
@@ -132,7 +126,7 @@
     }
 
     .team-strip h4 {
-      font-family: 'Cormorant Garant', serif;
+      font-family: ''Source Serif 4',Georgia,serif;
       font-size: 1.1rem; font-weight: 700;
       color: var(--green-deep); margin-bottom: 0.5rem;
     }
@@ -183,7 +177,7 @@
 
     .stat-box strong {
       display: block;
-      font-family: 'Cormorant Garant', serif;
+      font-family: ''Source Serif 4',Georgia,serif;
       font-size: 2.2rem;
       font-weight: 700;
       color: var(--green-deep);
@@ -203,7 +197,7 @@
     }
 
     .partner-strip h4 {
-      font-family: 'Cormorant Garant', serif;
+      font-family: ''Source Serif 4',Georgia,serif;
       font-size: 1.1rem; font-weight: 700;
       color: var(--green-deep); margin-bottom: 0.4rem;
     }
@@ -213,13 +207,13 @@
     .back-btn {
       display: inline-flex; align-items: center; gap: 8px;
       background: var(--green-deep); color: var(--white);
-      padding: 0.65rem 1.6rem; border-radius: 50px;
+      padding: 0.65rem 1.6rem; border-radius:4px;
       font-size: 0.88rem; font-weight: 600;
       text-decoration: none; transition: background 0.2s, transform 0.2s;
       margin-top: 1rem;
     }
 
-    .back-btn:hover { background: var(--green-mid); transform: translateY(-2px); }
+    .back-btn:hover { background: var(--green-mid);  }
 
     footer {
       background: var(--green-deep); color: rgba(255,255,255,0.7);
@@ -238,32 +232,26 @@
 <body>
 
 <nav>
-  <a href="D://Pragya Nepal/site draft 1.html" class="nav-logo">
+  <a href="index.html#projects" class="nav-logo">
   <img src="logo.jpg" alt="Pragya Nepal Logo" class="logo-img" />
   <span class="nav-wordmark">Pragya Nepal</span>
 </a>
-  <a href="D://Pragya Nepal/site draft 1.html" class="nav-back">← Back to Projects</a>
+  <a href="index.html#projects" class="nav-back">← Back to Projects</a>
 </nav>
 
 <section class="hero">
-  <canvas id="particle-canvas"></canvas>
+  
   <p class="hero-eyebrow">Buddhapark, Swoyambhu · May 2024</p>
   <h1>Free Community Health<br/>Checkup Camp</h1>
   <p class="hero-meta">Diabetes · Hypertension · 250+ Beneficiaries</p>
 </section>
 
-<span class="wave-divider">
-  <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,0 C360,60 1080,60 1440,0 L1440,60 L0,60 Z" fill="#F7F4EE"/>
-  </svg>
-</span>
-
 <div class="content">
 
   <p class="section-label">Overview</p>
-  <h2>Serving Families Isolated From Baseline Healthcare</h2>
-  <p>Pragya Nepal partnered with the Leo Club of Budhigandaki and local medical professionals to launch a rapid-response public health camp at Buddhapark, Swoyambhu — bringing free diagnostic services directly to communities with no easy access to healthcare.</p>
-  <p>We explicitly focused on diabetes and hypertension, two of the most common and under-diagnosed chronic conditions in Nepal, with a heavy emphasis on guiding high-risk older populations toward long-term lifestyle and healthcare management.</p>
+  <h2>Free Checkups Brought to the Community</h2>
+  <p>Together with the Leo Club of Budhigandaki and local medical professionals, we ran a one-day free health camp at Buddhapark, Swoyambhu, for people who cannot easily get to a clinic.</p>
+  <p>We screened for diabetes and hypertension, which are common in Nepal and often go undiagnosed. We paid particular attention to older people at higher risk and advised them on lifestyle changes and follow-up care.</p>
 
   <div class="stat-row">
     <div class="stat-box">
@@ -300,9 +288,9 @@
   </div>
 
   <p class="section-label">On the Ground</p>
-  <h2>Direct Impact, One Person at a Time</h2>
-  <p>The camp provided immediate diagnostic screenings and personalised preventative counseling. Medical professionals guided each high-risk participant on lifestyle changes and follow-up care, ensuring the impact extended well beyond a single day.</p>
-  <p>By bringing services to the community rather than expecting the community to come to services, we reached people who would never otherwise have received these screenings.</p>
+  <h2>On the Day</h2>
+  <p>Everyone who came was screened on the spot and got personal advice. Doctors spoke with each high-risk person about what to change and what to do next.</p>
+  <p>Taking the camp to the community meant reaching people who would probably never have gone for these tests.</p>
 
   <div class="photo-grid">
     <div class="photo-item">
@@ -324,7 +312,7 @@
   </div>
 
   <div class="highlight-box">
-    <p>Over 250 community members received free diagnostic testing, medical counseling, and direct health tracking in a single day.</p>
+    <p>More than 250 people got free tests and medical advice in a single day.</p>
   </div>
 
   <div class="partner-strip">
@@ -332,65 +320,15 @@
     <p>Leo Club of Budhigandaki — Millie Koirala · Local medical professionals, Swoyambhu</p>
   </div>
 
-  <a href="D://Pragya Nepal/site draft 1.html" class="back-btn">← Back to All Projects</a>
+  <a href="index.html#projects" class="back-btn">← Back to All Projects</a>
 
 </div>
 
 <footer>
-  <p>© 2024 Pragya Nepal · <a href="mailto:pragya.nepal.official@gmail.com">pragya.nepal.official@gmail.com</a></p>
+  <p>© 2026 Pragya Nepal · <a href="mailto:pragya.nepal.official@gmail.com">pragya.nepal.official@gmail.com</a></p>
 </footer>
 
-<script>
-(function () {
-  const canvas = document.getElementById('particle-canvas');
-  const ctx = canvas.getContext('2d');
-  let W, H, particles = [], tick = 0;
 
-  function resize() {
-    W = canvas.width  = canvas.offsetWidth;
-    H = canvas.height = canvas.offsetHeight;
-  }
-
-  function spawn() {
-    return {
-      x: Math.random() * W,
-      y: H + 10,
-      r: Math.random() * 2 + 0.5,
-      speed: Math.random() * 0.4 + 0.15,
-      drift: (Math.random() - 0.5) * 0.3,
-      alpha: Math.random() * 0.5 + 0.2,
-    };
-  }
-
-  for (let i = 0; i < 55; i++) {
-    const p = spawn();
-    p.y = Math.random() * H;
-    particles.push(p);
-  }
-
-  function draw() {
-    ctx.clearRect(0, 0, W, H);
-    tick += 0.01;
-
-    particles.forEach((p, i) => {
-      p.y -= p.speed;
-      p.x += p.drift + Math.sin(tick + i) * 0.12;
-      if (p.y < -10) { particles[i] = spawn(); }
-
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(255,255,255,${p.alpha})`;
-      ctx.fill();
-    });
-
-    requestAnimationFrame(draw);
-  }
-
-  window.addEventListener('resize', resize);
-  resize();
-  draw();
-})();
-</script>
 
 </body>
 </html>
